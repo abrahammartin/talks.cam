@@ -10,14 +10,18 @@ class TalkFinder
       send("#{key}=", value) if self.respond_to?("#{key}=")
     end
   end
-  
+
   def to_find_parameters
     set_default_conditions
     set_default_order
     find_parameters[:conditions] = [ conditions.join(' AND '), *settings ]
     find_parameters[:order] = order
-    find_parameters[:offset] = offset if offset
-    find_parameters[:limit] = limit if limit
+    if offset =~ /^[-+]?[0-9]+$/ 
+      find_parameters[:offset] = offset
+    end
+    if limit =~ /^[-+]?[0-9]+$/
+      find_parameters[:limit] = limit
+    end
     find_parameters
   end
   
@@ -56,7 +60,7 @@ class TalkFinder
     	errors << "End time was out of range in the request"    	
     end
   end
-  
+ 
   alias :start_time= :start_seconds=
   alias :end_time= :end_seconds=
   
