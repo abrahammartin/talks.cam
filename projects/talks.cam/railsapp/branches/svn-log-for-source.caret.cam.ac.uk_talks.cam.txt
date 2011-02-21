@@ -1,0 +1,2550 @@
+------------------------------------------------------------------------
+r116 | raymond | 2010-02-18 14:55:18 +0000 (Thu, 18 Feb 2010) | 1 line
+Changed paths:
+   A /tags/20100218 (from /trunk:115)
+
+PRODUCTION TAG FOR TUESDAY DEPLOY. Same as preceding QA tag except added bugfix for TLK-105 (not TLK-96!)
+------------------------------------------------------------------------
+r115 | raymond | 2010-02-17 11:08:39 +0000 (Wed, 17 Feb 2010) | 1 line
+Changed paths:
+   M /trunk/app/views/search/_list_result.rhtml
+
+TLK-96 During QA Chris found another variation on this bug (Array/Talk.count)
+------------------------------------------------------------------------
+r114 | raymond | 2010-02-15 12:41:33 +0000 (Mon, 15 Feb 2010) | 1 line
+Changed paths:
+   A /tags/20100215-qa-01 (from /trunk:113)
+
+Ready for QA. Primarily an upgrade-to-Ruby-1.8.7 release, but also fixes TLK-96 and some pre-existing regression failures.
+------------------------------------------------------------------------
+r113 | raymond | 2010-02-12 18:28:26 +0000 (Fri, 12 Feb 2010) | 1 line
+Changed paths:
+   M /trunk/app/models/talk.rb
+   M /trunk/config/environment.rb
+   M /trunk/test/functional/image_controller_test.rb
+   M /trunk/test/functional/show_controller_test.rb
+
+TLK-116 various regression test failures: some caused by Ruby upgrade and some that have been there for a while
+------------------------------------------------------------------------
+r112 | raymond | 2010-02-12 18:26:57 +0000 (Fri, 12 Feb 2010) | 1 line
+Changed paths:
+   M /trunk/app/helpers/show_helper.rb
+
+TLK-105 fix "0 talks" totals despite non-zero talks
+------------------------------------------------------------------------
+r111 | raymond | 2010-02-12 18:25:30 +0000 (Fri, 12 Feb 2010) | 1 line
+Changed paths:
+   M /trunk/test/unit/talk_test.rb
+   M /trunk/vendor/rails/activesupport/lib/active_support/core_ext/time/calculations.rb
+
+TLK-96 talk.month_range misses off last day of each month, patching Rails ruby-core-extension of Time.at_end_of_month
+------------------------------------------------------------------------
+r110 | raymond | 2010-02-10 16:06:40 +0000 (Wed, 10 Feb 2010) | 1 line
+Changed paths:
+   D /tags/20081030-production
+   A /tags/20081030-retrospective-from-production (from /tags/20081030-production:109)
+
+Attempting to clarify the name of this tag, as all other tags not otherwise labelled are also production tags
+------------------------------------------------------------------------
+r109 | raymond | 2010-02-02 12:39:56 +0000 (Tue, 02 Feb 2010) | 1 line
+Changed paths:
+   M /trunk/vendor/plugins/exception_notification/views/exception_notifier/_environment.rhtml
+
+TLK-106 Exception Notifier broken on newer Ruby (see bug report http://dev.rubyonrails.org/ticket/9940 and diff http://dev.rubyonrails.org/changeset/8191)
+------------------------------------------------------------------------
+r108 | raymond | 2009-10-23 14:10:19 +0100 (Fri, 23 Oct 2009) | 1 line
+Changed paths:
+   A /tags/20091023 (from /trunk:107)
+
+Two patches to stop unnecessary stacktrace emails to LTSH due to botnets and search engines
+------------------------------------------------------------------------
+r107 | raymond | 2009-10-23 14:06:25 +0100 (Fri, 23 Oct 2009) | 1 line
+Changed paths:
+   M /trunk/app/controllers/index_controller.rb
+
+Stop overzealous search engine indexing from causing stacktrace emails when dates are invalid (e.g. LTSH-8879)
+------------------------------------------------------------------------
+r106 | raymond | 2009-04-28 18:26:07 +0100 (Tue, 28 Apr 2009) | 1 line
+Changed paths:
+   M /trunk/app/controllers/custom_view_controller.rb
+
+stop automated bug report emails e.g. LTSH-7664 caused by invalid calls to /external/embed_feed.php?id= probably trying to find a PHP(!) exploit - instead redirect to /show/index/notfound404 which safely returns a 404
+------------------------------------------------------------------------
+r105 | raymond | 2009-04-08 17:15:24 +0100 (Wed, 08 Apr 2009) | 1 line
+Changed paths:
+   A /tags/20090408 (from /trunk:104)
+
+LIVE PATCH to two css files
+------------------------------------------------------------------------
+r104 | raymond | 2009-04-08 17:11:12 +0100 (Wed, 08 Apr 2009) | 1 line
+Changed paths:
+   M /trunk/public/stylesheets/embedcss.css
+
+TLKH-1370 bug report - incorrectly written CSS selectors
+------------------------------------------------------------------------
+r103 | raymond | 2009-04-06 13:27:11 +0100 (Mon, 06 Apr 2009) | 1 line
+Changed paths:
+   A /trunk/script/talk-upload-example.xml
+
+rudimentary documentation of xml upload interface
+------------------------------------------------------------------------
+r102 | raymond | 2009-04-06 12:38:30 +0100 (Mon, 06 Apr 2009) | 1 line
+Changed paths:
+   M /trunk/script/rest_helper.sh
+
+tweak
+------------------------------------------------------------------------
+r101 | raymond | 2009-04-04 17:00:50 +0100 (Sat, 04 Apr 2009) | 1 line
+Changed paths:
+   M /trunk/public/stylesheets/talks-screen.css
+
+TLK-94 css a:*:hover colour - forget to override default in new style for quicklinks
+------------------------------------------------------------------------
+r100 | raymond | 2009-03-24 16:49:23 +0000 (Tue, 24 Mar 2009) | 1 line
+Changed paths:
+   A /tags/20090320 (from /trunk:99)
+
+retrospective tag to cover patching of production server last Friday (previous tag + tiny CSS change affecting only front page)
+------------------------------------------------------------------------
+r99 | raymond | 2009-03-20 16:47:40 +0000 (Fri, 20 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/public/stylesheets/talks-screen.css
+
+LIVE PATCH: improve style of new link bar
+------------------------------------------------------------------------
+r98 | raymond | 2009-03-19 12:46:19 +0000 (Thu, 19 Mar 2009) | 1 line
+Changed paths:
+   A /tags/20090319 (from /trunk:97)
+
+production release!
+------------------------------------------------------------------------
+r97 | raymond | 2009-03-19 12:00:33 +0000 (Thu, 19 Mar 2009) | 1 line
+Changed paths:
+   A /tags/20090319-qa-01 (from /trunk:96)
+
+QA
+------------------------------------------------------------------------
+r96 | raymond | 2009-03-19 11:48:11 +0000 (Thu, 19 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/app/helpers/show_helper.rb
+
+/show/archive link - for large archives, limit to first 500 by default
+------------------------------------------------------------------------
+r95 | raymond | 2009-03-19 11:20:40 +0000 (Thu, 19 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/app/views/list/index.rhtml
+   M /trunk/app/views/shared/help.rhtml
+   M /trunk/app/views/shared/user_information.rhtml
+   M /trunk/app/views/talk/_help_talk_abstract.rhtml
+   D /trunk/public/changes.txt
+
+UI WORDING: improve leftbar, tidy-up List->Further Detail, augment Talk.Abstract AJAX help
+------------------------------------------------------------------------
+r94 | raymond | 2009-03-19 10:30:25 +0000 (Thu, 19 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/app/views/list/_list_details.rhtml
+   M /trunk/app/views/list/choose.rhtml
+   M /trunk/app/views/list/edit.rhtml
+   M /trunk/app/views/list/new.rhtml
+   M /trunk/app/views/shared/footer.rhtml
+   M /trunk/app/views/talk/edit.rhtml
+   M /trunk/public/stylesheets/talks-screen.css
+
+UI WORDING: clarify ex-directory, who should add talks/lists. fix footer
+------------------------------------------------------------------------
+r93 | raymond | 2009-03-18 20:06:15 +0000 (Wed, 18 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/app/views/index/talks.rhtml
+   M /trunk/app/views/search/index.rhtml
+   M /trunk/public/stylesheets/talks-screen.css
+
+FRONT PAGE: add more prominent links to index; fix bug in Talks Index Title ("starting with new" etc)
+------------------------------------------------------------------------
+r92 | raymond | 2009-03-18 17:28:50 +0000 (Wed, 18 Mar 2009) | 1 line
+Changed paths:
+   D /tags/broken20090129
+
+mistaken empty tree
+------------------------------------------------------------------------
+r91 | raymond | 2009-03-18 17:16:04 +0000 (Wed, 18 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/app/controllers/list_controller.rb
+
+Make List and Talk creation consistent w.r.t. ex-directory default on web form (default=true)
+------------------------------------------------------------------------
+r90 | raymond | 2009-03-18 17:05:13 +0000 (Wed, 18 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/app/views/custom_view/embed_example4.rhtml
+
+remove ancient Google Analytics tag leftover (different tracker??!)
+------------------------------------------------------------------------
+r89 | raymond | 2009-03-18 16:24:45 +0000 (Wed, 18 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/app/views/shared/footer.rhtml
+
+Move Cambridge-specific Google Analytics tracker out of public SVN, now in CARET Infrastructure SVN
+------------------------------------------------------------------------
+r88 | raymond | 2009-03-11 15:49:58 +0000 (Wed, 11 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/test/fixtures/custom_views.yml
+   M /trunk/test/fixtures/lists.yml
+   M /trunk/test/functional/custom_view_controller_test.rb
+   M /trunk/test/functional/index_controller_test.rb
+   M /trunk/test/functional/statistics_controller_test.rb
+
+TESTS: coverage of previously untested custom_view_controller functionality, underlying the three legacy "php" URLs in config/routes.rb
+------------------------------------------------------------------------
+r87 | raymond | 2009-03-10 17:08:47 +0000 (Tue, 10 Mar 2009) | 1 line
+Changed paths:
+   M /trunk/test/fixtures/talks.yml
+   M /trunk/test/functional/index_controller_test.rb
+   M /trunk/test/functional/list_controller_test.rb
+   M /trunk/test/functional/statistics_controller_test.rb
+   M /trunk/test/functional/talk_controller_test.rb
+   M /trunk/test/unit/list_list_test.rb
+
+TESTS: increase coverage. TODO - actually assert useful things too!
+------------------------------------------------------------------------
+r86 | raymond | 2009-03-04 17:03:26 +0000 (Wed, 04 Mar 2009) | 1 line
+Changed paths:
+   D /trunk/script/rest_helper
+   A /trunk/script/rest_helper.sh (from /trunk/script/rest_helper:85)
+
+rest_helper is the only non-ruby script in script/ so make it clear by file extension
+------------------------------------------------------------------------
+r85 | raymond | 2009-02-24 18:38:33 +0000 (Tue, 24 Feb 2009) | 1 line
+Changed paths:
+   M /trunk/test/functional/show_controller_test.rb
+
+TLK-9 re-jig the test Will added to use more elegant "assert_nothing_raised"
+------------------------------------------------------------------------
+r84 | raymond | 2009-02-23 16:03:12 +0000 (Mon, 23 Feb 2009) | 1 line
+Changed paths:
+   M /trunk/app/views/document/recent_changes.rhtml
+
+/document/changes - recent wiki changes - make it more robust
+------------------------------------------------------------------------
+r83 | raymond | 2009-02-17 18:37:53 +0000 (Tue, 17 Feb 2009) | 1 line
+Changed paths:
+   M /trunk/test/fixtures/talks.yml
+   M /trunk/test/functional/statistics_controller_test.rb
+
+TLK-58 Make StatisticsControllerTest pass - assertions didnt match dynamic fixtures (test data), fixtures tweaked
+------------------------------------------------------------------------
+r82 | raymond | 2009-02-13 18:07:00 +0000 (Fri, 13 Feb 2009) | 1 line
+Changed paths:
+   M /trunk/app/models/email_subscription.rb
+
+TLK-78 prevent direct addition of nils in email_sub table - not convinced this is how they got there though
+------------------------------------------------------------------------
+r81 | raymond | 2009-02-13 18:04:59 +0000 (Fri, 13 Feb 2009) | 1 line
+Changed paths:
+   M /trunk/test/functional/show_controller_test.rb
+
+TLK-80 rev 72 broke this test - fixed by allowing webcal: protocol too
+------------------------------------------------------------------------
+r80 | raymond | 2009-02-13 17:58:05 +0000 (Fri, 13 Feb 2009) | 1 line
+Changed paths:
+   M /trunk/test/functional/image_controller_test.rb
+
+TLK-59 make ImageControllerTest pass again - revert Tom Cs change which was probably due to Tom having a different ImageMagick library version
+------------------------------------------------------------------------
+r79 | raymond | 2009-02-11 19:09:27 +0000 (Wed, 11 Feb 2009) | 2 lines
+Changed paths:
+   A /branches/svn-log-for-saffron.caret.cam.ac.uk_restricted_main_talks.txt
+
+Codebase used to live on https://saffron.caret.cam.ac.uk/restricted/main SVN
+SVN log from that version included here for reference.
+------------------------------------------------------------------------
+r78 | raymond | 2009-01-29 12:44:46 +0000 (Thu, 29 Jan 2009) | 1 line
+Changed paths:
+   A /tags/20090129 (from /trunk:77)
+
+production release!
+------------------------------------------------------------------------
+r77 | raymond | 2009-01-29 12:44:11 +0000 (Thu, 29 Jan 2009) | 1 line
+Changed paths:
+   D /tags/20090129
+   A /tags/broken20090129 (from /tags/20090129:76)
+
+something odd happened here
+------------------------------------------------------------------------
+r76 | raymond | 2009-01-29 12:42:56 +0000 (Thu, 29 Jan 2009) | 1 line
+Changed paths:
+   A /tags/20090129
+   A /tags/20090129/20090129
+
+production release!
+------------------------------------------------------------------------
+r75 | raymond | 2009-01-28 19:02:24 +0000 (Wed, 28 Jan 2009) | 1 line
+Changed paths:
+   A /tags/20090129-qa-01 (from /trunk:74)
+
+QA release
+------------------------------------------------------------------------
+r74 | raymond | 2009-01-28 18:57:30 +0000 (Wed, 28 Jan 2009) | 1 line
+Changed paths:
+   A /trunk/fix_file_perms.sh
+
+make deployment easier with file permission fixer script
+------------------------------------------------------------------------
+r73 | raymond | 2009-01-28 18:03:52 +0000 (Wed, 28 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/models/talk.rb
+
+TLK-3 stop start_time / end_time =nil breaking vcal download
+------------------------------------------------------------------------
+r72 | raymond | 2009-01-28 17:35:12 +0000 (Wed, 28 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/views/show/_list_details.rhtml
+
+TLK-80 put webcal subscribe link onto main List page
+------------------------------------------------------------------------
+r71 | raymond | 2009-01-28 16:36:11 +0000 (Wed, 28 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/models/custom_view.rb
+   M /trunk/app/views/show/bulletin.rhtml
+
+TLK-62 bulletin format: add to list of custom formats, tidy-up styles and code
+------------------------------------------------------------------------
+r70 | raymond | 2009-01-28 14:35:55 +0000 (Wed, 28 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/models/mailer.rb
+
+TLK-54 stop attempting to BCC Tom Cs old invalid email on every tell-a-friend message; they are all logged anyway
+------------------------------------------------------------------------
+r69 | raymond | 2009-01-28 11:12:05 +0000 (Wed, 28 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/models/related_talk.rb
+
+TLK-77 reduce number of talks randomly picked to make cron more efficient
+------------------------------------------------------------------------
+r68 | raymond | 2009-01-27 19:08:43 +0000 (Tue, 27 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/controllers/application.rb
+
+TLK-46 catch and log process being killed off instead of sending spurious emails
+------------------------------------------------------------------------
+r67 | raymond | 2009-01-27 19:01:48 +0000 (Tue, 27 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/lib/periodic_tasks.rb
+
+Ruby style improvement - remove optional semicolons at ends of lines (was newbie style...)
+------------------------------------------------------------------------
+r66 | raymond | 2009-01-24 16:02:13 +0000 (Sat, 24 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/lib/periodic_tasks.rb
+
+TLK-61 cron: more logging, reorder tasks by importance/resource-hungriness, rescue blocks for vital tasks
+------------------------------------------------------------------------
+r65 | raymond | 2009-01-20 16:42:21 +0000 (Tue, 20 Jan 2009) | 1 line
+Changed paths:
+   A /trunk/app/views/show/bulletin.rhtml
+
+TLK-62 first-cut at "bulletin/poster/" view. needs styling, code review and lots of QA as this was just a quick proof of concept
+------------------------------------------------------------------------
+r64 | raymond | 2009-01-08 14:59:19 +0000 (Thu, 08 Jan 2009) | 1 line
+Changed paths:
+   A /tags/20090108 (from /trunk:63)
+
+Production release (only one change since QA tag)
+------------------------------------------------------------------------
+r63 | raymond | 2009-01-08 14:58:18 +0000 (Thu, 08 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/controllers/talk_controller.rb
+
+temporary fix - realised that Edit as well as Create posts to /talk/update, so /list/choose and "added" are not entirely appropriate...
+------------------------------------------------------------------------
+r62 | raymond | 2009-01-08 09:42:20 +0000 (Thu, 08 Jan 2009) | 1 line
+Changed paths:
+   A /tags/20090108-qa-01 (from /trunk:61)
+
+Ready for QA
+------------------------------------------------------------------------
+r61 | raymond | 2009-01-06 19:12:07 +0000 (Tue, 06 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/test/functional/show_controller_test.rb
+   M /trunk/test/unit/related_list_test.rb
+   M /trunk/test/unit/related_talk_test.rb
+   M /trunk/test/unit/user_test.rb
+
+modifying tests so that List.create always has :name passed in - these have been failing ever since fix in r37 made list.name mandatory
+------------------------------------------------------------------------
+r60 | raymond | 2009-01-06 18:33:23 +0000 (Tue, 06 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/controllers/show_controller.rb
+
+TLK-47 stop producing stacktraces if problems occur during /show/email (normally called internally by cron-triggered Mailer.send_mailshots via Mailer.get_list, and thus the stacktraces got emailed directly to users)
+------------------------------------------------------------------------
+r59 | raymond | 2009-01-06 17:02:05 +0000 (Tue, 06 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/controllers/talk_controller.rb
+
+TLK-57 /talk/update if not POST, then redirect to /list/choose with warning - usually due to redirect after login
+------------------------------------------------------------------------
+r58 | whb21 | 2009-01-05 17:02:21 +0000 (Mon, 05 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/controllers/show_controller.rb
+   M /trunk/app/models/talk_finder.rb
+   M /trunk/app/views/show/_list_details.rhtml
+   M /trunk/app/views/show/asnc_regular.rhtml
+   M /trunk/app/views/show/cam_events.rhtml
+   M /trunk/app/views/show/detailed.rhtml
+   M /trunk/app/views/show/email.rhtml
+   M /trunk/app/views/show/heritage_group.rhtml
+   M /trunk/app/views/show/index.rhtml
+   M /trunk/app/views/show/minimalist.rhtml
+   M /trunk/app/views/show/old_talks.rhtml
+   M /trunk/app/views/show/oneday.rhtml
+   M /trunk/app/views/show/rss.rxml
+   M /trunk/app/views/show/simplewithlogo.rhtml
+   M /trunk/app/views/show/table.rhtml
+   M /trunk/app/views/show/text.rhtml
+   M /trunk/app/views/show/xml.rxml
+   M /trunk/app/views/show/zoology.rhtml
+   M /trunk/test/functional/show_controller_test.rb
+
+TLK-9. Catch occasions where show URLs are passed invalid timestrings, and record an error in the response.
+------------------------------------------------------------------------
+r57 | whb21 | 2009-01-02 16:32:09 +0000 (Fri, 02 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/app/models/talk.rb
+   M /trunk/test/unit/talk_test.rb
+
+Bug TLK-4.  Further updated model and unit test for Talk to perform tighter validation on time as well as date
+------------------------------------------------------------------------
+r56 | whb21 | 2008-12-30 21:08:04 +0000 (Tue, 30 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/models/talk.rb
+
+Bug TLK-4. Modified date validation to require a parsable date, but still matching Tom's string format.  Also fixed subsequent bug where date_string was checked for existence, not blankness.  The test on the other strings may also be incorrect, so we should maybe revisit this later.
+------------------------------------------------------------------------
+r55 | whb21 | 2008-12-30 17:43:42 +0000 (Tue, 30 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/test/functional/user_controller_test.rb
+
+follow_redirect method no longer exists.  I've changed test_new instead to directly assert that the redirect is to the correct action on the correct controller (rather than following the redirect and then asserting on the template)
+------------------------------------------------------------------------
+r54 | raymond | 2008-12-30 13:28:24 +0000 (Tue, 30 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/views/shared/footer.rhtml
+
+tweak to r23 update so that test_for_absolute_urls(ShowControllerTest) doesnt fail
+------------------------------------------------------------------------
+r53 | whb21 | 2008-12-29 19:41:31 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/app/views/layouts/application.rhtml
+   M /branches/whb_rails_2_2_upgrade/app/views/layouts/front.rhtml
+   M /branches/whb_rails_2_2_upgrade/app/views/layouts/minimal.rhtml
+   M /branches/whb_rails_2_2_upgrade/app/views/layouts/with_related.rhtml
+   M /branches/whb_rails_2_2_upgrade/app/views/search/_leftbar.rhtml
+   M /branches/whb_rails_2_2_upgrade/app/views/shared/_sidebox.rhtml
+   M /branches/whb_rails_2_2_upgrade/app/views/shared/user_information.rhtml
+
+Changed occurrances of render 'filename' to render :file => 'filename' as per deprecation warnings (ready for 2.3)
+------------------------------------------------------------------------
+r52 | whb21 | 2008-12-29 18:50:16 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/test/unit/talk_test.rb
+
+Internally, talks does a month_range(year, 1,3)  in other words asks for the range (start of Jan 2005, end of March 2005). The behaviour in Rails 2.2 is that then end of the range is the last minute of the last day of the month, not the first minute of the last day of the month. So, this was an undiscovered bug in the old version  for Talks under Rails 1.2, 3pm on Mar 31 does not belong to a term.
+------------------------------------------------------------------------
+r51 | whb21 | 2008-12-29 18:49:15 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/test/functional/image_controller_test.rb
+   M /branches/whb_rails_2_2_upgrade/test/functional/list_controller_test.rb
+   M /branches/whb_rails_2_2_upgrade/test/functional/show_controller_test.rb
+   M /branches/whb_rails_2_2_upgrade/test/functional/talk_controller_test.rb
+
+changed from asserting on @response.headers['Content-type'] to @response.headers['type']. Also change image test to use / rather than ; in function call URL
+------------------------------------------------------------------------
+r50 | whb21 | 2008-12-29 18:44:59 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/test/functional/document_controller_test.rb
+
+Rails 2.x has changed from using '+' characters as escapes for ' ' to using '%20', both in ActionController::Routing::Routes#generate and #recognize. (In the older version, a ' + ' would generate to a ' + ' which would recognize to a space'). Apparently web servers perform the unescaping on ' + ' and '%20' at different times.
+------------------------------------------------------------------------
+r49 | whb21 | 2008-12-29 18:43:16 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/config/routes.rb
+
+In Rails 2.x, functions are mapped with / rather than ;.
+------------------------------------------------------------------------
+r48 | whb21 | 2008-12-29 18:42:22 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/app/views/user/change_password.rhtml
+
+start_form_tag has been deprecated and dropped, replaced by just form_tag and a block
+------------------------------------------------------------------------
+r47 | whb21 | 2008-12-29 18:40:59 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/app/controllers/list_controller.rb
+   M /branches/whb_rails_2_2_upgrade/app/controllers/login_controller.rb
+
+redirect_to_path has been deprecated and then dropped, and should be replaced with redirect_to
+------------------------------------------------------------------------
+r46 | whb21 | 2008-12-29 18:31:17 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/auto_complete
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/auto_complete/README
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/auto_complete/Rakefile
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/auto_complete/init.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/auto_complete/lib
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/auto_complete/lib/auto_complete.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/auto_complete/lib/auto_complete_macros_helper.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/auto_complete/test
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/auto_complete/test/auto_complete_test.rb
+
+Added auto_complete plugin. (This had been included in core in 1.2.x but is a plugin in 2.x)
+------------------------------------------------------------------------
+r45 | whb21 | 2008-12-29 18:27:44 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/config/environment.rb
+   A /branches/whb_rails_2_2_upgrade/config/initializers
+   A /branches/whb_rails_2_2_upgrade/config/initializers/inflections.rb
+   A /branches/whb_rails_2_2_upgrade/config/initializers/mime_types.rb
+   A /branches/whb_rails_2_2_upgrade/config/initializers/new_rails_defaults.rb
+   A /branches/whb_rails_2_2_upgrade/config/initializers/pubkey2.txt (from /branches/whb_rails_2_2_upgrade/config/pubkey2.txt:39)
+   A /branches/whb_rails_2_2_upgrade/config/initializers/pubkey901.txt (from /branches/whb_rails_2_2_upgrade/config/pubkey901.txt:39)
+   A /branches/whb_rails_2_2_upgrade/config/initializers/talks_initializer.rb
+   D /branches/whb_rails_2_2_upgrade/config/pubkey2.txt
+   D /branches/whb_rails_2_2_upgrade/config/pubkey901.txt
+
+environment.rb is no longer a dumping ground for initialisation code. These instead go into automatically loaded files in config/initializers.  Also added the RAILS_GEM_VERSION to the environment.rb file.  That way, we don't have to freeze rails into the vendor directory to specify a version.
+------------------------------------------------------------------------
+r44 | whb21 | 2008-12-29 18:14:25 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/CHANGELOG
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/MIT-LICENSE
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/README
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/RUNNING_UNIT_TESTS
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/Rakefile
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/init.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/lib
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/lib/acts_as_versioned.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/abstract_unit.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/database.yml
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/authors.yml
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/landmark.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/landmark_versions.yml
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/landmarks.yml
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/locked_pages.yml
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/locked_pages_revisions.yml
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/migrations
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/migrations/1_add_versioned_tables.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/page.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/page_versions.yml
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/pages.yml
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/fixtures/widget.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/migration_test.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/schema.rb
+   A /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned/test/versioned_test.rb
+
+Added new version of acts_as_versioned, from git repository at it://github.com/technoweenie/acts_as_versioned.git
+------------------------------------------------------------------------
+r43 | whb21 | 2008-12-29 18:10:34 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   D /branches/whb_rails_2_2_upgrade/vendor/plugins/acts_as_versioned
+
+Removed old version of acts_as_versioned plugin.  Add new version in separate commit
+------------------------------------------------------------------------
+r42 | whb21 | 2008-12-29 18:06:29 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   M /branches/whb_rails_2_2_upgrade/config/boot.rb
+   M /branches/whb_rails_2_2_upgrade/public/javascripts/controls.js
+   M /branches/whb_rails_2_2_upgrade/public/javascripts/dragdrop.js
+   M /branches/whb_rails_2_2_upgrade/public/javascripts/effects.js
+   M /branches/whb_rails_2_2_upgrade/public/javascripts/prototype.js
+   A /branches/whb_rails_2_2_upgrade/script/dbconsole
+   A /branches/whb_rails_2_2_upgrade/script/performance/request
+
+result of rake rails:update to update various scripts
+------------------------------------------------------------------------
+r41 | whb21 | 2008-12-29 17:59:53 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   D /branches/whb_rails_2_2_upgrade/vendor/rails
+
+Remove frozen rails 1.2.3
+------------------------------------------------------------------------
+r40 | whb21 | 2008-12-29 17:54:49 +0000 (Mon, 29 Dec 2008) | 1 line
+Changed paths:
+   D /branches/whb_rails_2_2_upgrade/vendor/plugins/memory_test_fix
+
+The memory_test_fix plugin does not work with the more recent gem version. This plugin just sets SQLite to run in memory-mode, making tests slightly faster. Removing it does not break anything, and our dev machines don't always have SQLite installed in the first place. The plugin appears not to have been updated since 2006.
+------------------------------------------------------------------------
+r39 | whb21 | 2008-12-29 15:37:38 +0000 (Mon, 29 Dec 2008) | 3 lines
+Changed paths:
+   A /branches/whb_rails_2_2_upgrade (from /trunk:38)
+
+Branch for rails 2.2 upgrade
+
+
+------------------------------------------------------------------------
+r38 | raymond | 2008-12-24 17:17:17 +0000 (Wed, 24 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/views/list/choose.rhtml
+
+TLK-1 if you dont have a personal list, dont raise exception/email bug report when navigating to this page (temporary fix pending revamp of "personal list" TLK-42)
+------------------------------------------------------------------------
+r37 | raymond | 2008-12-24 16:34:24 +0000 (Wed, 24 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/models/list.rb
+
+TLK-14, TLK-37 prevent creation of list with NULL/nil name (e.g. via silly GET /list/create), which causes bug reports: "comparison of String with nil failed" On line #15 of app/views/shared/user_information.rhtml and On line #28 of app/views/user/show.rhtml and prevents user from viewing any pages until list is manually fixed in database
+------------------------------------------------------------------------
+r36 | raymond | 2008-12-23 14:18:12 +0000 (Tue, 23 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/models/talk.rb
+
+TLK-4 handle invalid dates properly, turned out they were validated, but then after_validation :update_start_and_end_times_from_strings tried to run even when validation failed
+------------------------------------------------------------------------
+r35 | raymond | 2008-12-23 12:16:55 +0000 (Tue, 23 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/controllers/login_controller.rb
+
+TLK-15 improve Ruby style - indirect through named route "home" instead of hard-coded controller
+------------------------------------------------------------------------
+r34 | raymond | 2008-12-22 18:58:24 +0000 (Mon, 22 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/controllers/login_controller.rb
+
+TLK-15 Raven error 410 is actually "user pressed cancel" (see http://raven.cam.ac.uk/project/waa2wls-protocol.txt), so dont throw Exception and email bug report, just redirect to home page
+------------------------------------------------------------------------
+r33 | raymond | 2008-12-22 18:55:20 +0000 (Mon, 22 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/controllers/application.rb
+
+TLK-19 make ActionController::MissingTemplate Exception return 404, instead of 500 + emailing bug report
+------------------------------------------------------------------------
+r32 | raymond | 2008-12-04 17:33:33 +0000 (Thu, 04 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/models/talk.rb
+
+Import from Toms branch: BUGFIX/FEATURE - add name_of_speaker to vcal
+------------------------------------------------------------------------
+r31 | raymond | 2008-12-04 17:18:54 +0000 (Thu, 04 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/models/mailer.rb
+
+Import from Toms branch: BUGFIX - email subject line
+------------------------------------------------------------------------
+r30 | raymond | 2008-12-04 17:12:13 +0000 (Thu, 04 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/views/shared/header.rhtml
+
+fix typo in new HTML meta tag
+------------------------------------------------------------------------
+r29 | raymond | 2008-12-04 17:09:38 +0000 (Thu, 04 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/app/views/shared/header.rhtml
+
+Import from Toms branch: (verbatim import, including typo) - new HTML meta tag (keywords)
+------------------------------------------------------------------------
+r28 | raymond | 2008-12-04 16:58:22 +0000 (Thu, 04 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/test/functional/image_controller_test.rb
+   M /trunk/test/functional/statistics_controller_test.rb
+   M /trunk/test/unit/mailer_test.rb
+
+Import from Toms branch: updates to Tests
+------------------------------------------------------------------------
+r27 | raymond | 2008-12-04 16:56:01 +0000 (Thu, 04 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/dependencies.txt
+
+Import from Toms branch: Added a comment on the rails version required to the dependencies
+------------------------------------------------------------------------
+r26 | raymond | 2008-12-04 16:19:43 +0000 (Thu, 04 Dec 2008) | 1 line
+Changed paths:
+   A /trunk/LICENSE (from /branches/tamc_at_greenonblack.com/LICENSE:25)
+
+import license from Toms branch (committed by stevel)
+------------------------------------------------------------------------
+r25 | raymond | 2008-12-01 19:06:38 +0000 (Mon, 01 Dec 2008) | 1 line
+Changed paths:
+   A /tags/20081030-production/public/holdingpage.html (from /trunk/public/holdingpage.html:24)
+
+file from production was originally omitted as I wasn't sure what it was for - latest version of Apache conf in infra SVN / nutmeg-83, synced from production, explains it - so including it in tag
+------------------------------------------------------------------------
+r24 | raymond | 2008-12-01 19:04:13 +0000 (Mon, 01 Dec 2008) | 1 line
+Changed paths:
+   A /trunk/public/holdingpage.html
+
+holdingpage.html from Production - purpose of holdingpage.html on production is explained in most recent version of "default" (=Apache conf) in Infrastructure SVN, having been synced with production - https://saffron.caret.cam.ac.uk/restricted/main/infrastructure/trunk/servers/nutmeg-83/default
+------------------------------------------------------------------------
+r23 | raymond | 2008-11-25 18:49:57 +0000 (Tue, 25 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/app/views/shared/footer.rhtml
+
+remove hostname from URL in "changes" link so that dev and QA links dont point to live
+------------------------------------------------------------------------
+r22 | raymond | 2008-11-25 18:38:44 +0000 (Tue, 25 Nov 2008) | 1 line
+Changed paths:
+   A /tags/20081030-production/public/changes.txt (from /trunk/public/changes.txt:21)
+
+currently on production server, linked to from front page, forgot to put into SVN
+------------------------------------------------------------------------
+r21 | raymond | 2008-11-25 18:37:18 +0000 (Tue, 25 Nov 2008) | 1 line
+Changed paths:
+   A /trunk/public/changes.txt
+
+currently on production server, linked to from front page, forgot to put into SVN
+------------------------------------------------------------------------
+r20 | raymond | 2008-11-25 16:43:44 +0000 (Tue, 25 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/app/views/layouts/front.rhtml
+
+TLK-41 remove CURE logo from front page
+------------------------------------------------------------------------
+r19 | raymond | 2008-11-10 17:35:52 +0000 (Mon, 10 Nov 2008) | 1 line
+Changed paths:
+   D /branches/tamc@greenonblack.com
+   A /branches/tamc_at_greenonblack.com (from /branches/tamc@greenonblack.com:18)
+
+rename so as not to have special char in URL!
+------------------------------------------------------------------------
+r18 | raymond | 2008-11-10 17:25:22 +0000 (Mon, 10 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/public/.htaccess
+
+trim pointless whitespace that was on production (same as revision 1)
+------------------------------------------------------------------------
+r17 | raymond | 2008-11-10 17:24:13 +0000 (Mon, 10 Nov 2008) | 15 lines
+Changed paths:
+   A /tags/20081030-production (from /trunk:16)
+
+Same as production snapshot taken on 30 Oct (nutmeg-83:/home/talks), with the following exceptions:
+
+* config type changes:
+public/404.html (contains email address)
+config/database.yml (contains password etc)
+config/environment.rb (contains email address and hostname etc)
+
+* files and dirs only on production:
+public/changes.txt - something to do with migrating from previous host?
+public/holdingpage.html - downtime notice?
+public/image/show/ tree - not sure what this is for?
+log/* - empty dir in SVN
+_darcs/ tree - is like .svn but for darcs source control
+.* files - Linux user files e.g. .bashrc
+
+------------------------------------------------------------------------
+r16 | raymond | 2008-11-10 17:05:56 +0000 (Mon, 10 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/public/.htaccess
+
+trivial whitespace change to match production, for the purposes of tagging - will roll this back again
+------------------------------------------------------------------------
+r15 | raymond | 2008-11-10 17:01:45 +0000 (Mon, 10 Nov 2008) | 1 line
+Changed paths:
+   D /tags/test
+
+remove test
+------------------------------------------------------------------------
+r14 | raymond | 2008-11-10 16:59:51 +0000 (Mon, 10 Nov 2008) | 2 lines
+Changed paths:
+   A /tags/test
+
+test
+
+------------------------------------------------------------------------
+r13 | raymond | 2008-11-10 15:54:50 +0000 (Mon, 10 Nov 2008) | 1 line
+Changed paths:
+   A /trunk (from /trunk:1)
+
+rolling back to revision 1, which is almost the same as production with the exception of some deployment-time config and related diffs
+------------------------------------------------------------------------
+r12 | raymond | 2008-11-10 15:45:36 +0000 (Mon, 10 Nov 2008) | 1 line
+Changed paths:
+   A /branches/tamc@greenonblack.com (from /trunk:11)
+   D /trunk
+
+moving Toms patches onto a branch, they are not in production yet
+------------------------------------------------------------------------
+r11 | raymond | 2008-10-30 13:20:59 +0000 (Thu, 30 Oct 2008) | 1 line
+Changed paths:
+   D /branches/test
+
+remove test
+------------------------------------------------------------------------
+r10 | raymond | 2008-10-30 13:20:47 +0000 (Thu, 30 Oct 2008) | 1 line
+Changed paths:
+   A /branches/test
+
+test permissions
+------------------------------------------------------------------------
+r9 | tamc@greenonblack.com | 2008-09-08 08:59:54 +0100 (Mon, 08 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/test/functional/statistics_controller_test.rb
+
+Fixed the statistics test so that it passes (no changes to live code)
+
+------------------------------------------------------------------------
+r8 | tamc@greenonblack.com | 2008-05-14 09:08:08 +0100 (Wed, 14 May 2008) | 2 lines
+Changed paths:
+   M /trunk/test/functional/image_controller_test.rb
+   M /trunk/test/unit/mailer_test.rb
+
+Couple of tweaks to the tests so that they match the other changes made to the system.
+
+------------------------------------------------------------------------
+r7 | tamc@greenonblack.com | 2008-05-14 08:28:36 +0100 (Wed, 14 May 2008) | 2 lines
+Changed paths:
+   M /trunk/app/models/talk.rb
+
+Added the speaker's name to the vcal entries
+
+------------------------------------------------------------------------
+r6 | tamc@greenonblack.com | 2008-05-14 08:28:13 +0100 (Wed, 14 May 2008) | 2 lines
+Changed paths:
+   M /trunk/app/models/mailer.rb
+
+Fixed the quotation marks in the mail out title
+
+------------------------------------------------------------------------
+r5 | tamc@greenonblack.com | 2008-05-14 08:27:29 +0100 (Wed, 14 May 2008) | 2 lines
+Changed paths:
+   M /trunk/app/views/shared/header.rhtml
+
+At Alan (or was it David)'s request - added some keywords to the standard talks meta data
+
+------------------------------------------------------------------------
+r4 | stevel | 2008-05-03 06:42:55 +0100 (Sat, 03 May 2008) | 2 lines
+Changed paths:
+   M /trunk/LICENSE
+
+Updated license following comment from Tom.
+
+------------------------------------------------------------------------
+r3 | tamc@greenonblack.com | 2008-04-28 21:01:56 +0100 (Mon, 28 Apr 2008) | 1 line
+Changed paths:
+   M /trunk/dependencies.txt
+
+Added a comment on the rails version required to the dependencies
+------------------------------------------------------------------------
+r2 | stevel | 2008-04-25 16:30:24 +0100 (Fri, 25 Apr 2008) | 2 lines
+Changed paths:
+   A /trunk/LICENSE
+
+Added the license to make Talks.cam code open source.
+
+------------------------------------------------------------------------
+r1 | stevel | 2008-04-25 16:07:51 +0100 (Fri, 25 Apr 2008) | 2 lines
+Changed paths:
+   A /branches
+   A /tags
+   A /trunk
+   A /trunk/README
+   A /trunk/Rakefile
+   A /trunk/app
+   A /trunk/app/controllers
+   A /trunk/app/controllers/application.rb
+   A /trunk/app/controllers/custom_view_controller.rb
+   A /trunk/app/controllers/document_controller.rb
+   A /trunk/app/controllers/image_controller.rb
+   A /trunk/app/controllers/index_controller.rb
+   A /trunk/app/controllers/list_controller.rb
+   A /trunk/app/controllers/list_list_controller.rb
+   A /trunk/app/controllers/list_talk_controller.rb
+   A /trunk/app/controllers/list_user_controller.rb
+   A /trunk/app/controllers/login_controller.rb
+   A /trunk/app/controllers/reminder_controller.rb
+   A /trunk/app/controllers/search_controller.rb
+   A /trunk/app/controllers/show_controller.rb
+   A /trunk/app/controllers/statistics_controller.rb
+   A /trunk/app/controllers/talk_controller.rb
+   A /trunk/app/controllers/tickles_controller.rb
+   A /trunk/app/controllers/user_controller.rb
+   A /trunk/app/helpers
+   A /trunk/app/helpers/application_helper.rb
+   A /trunk/app/helpers/custom_view_helper.rb
+   A /trunk/app/helpers/document_helper.rb
+   A /trunk/app/helpers/image_helper.rb
+   A /trunk/app/helpers/index_helper.rb
+   A /trunk/app/helpers/list_helper.rb
+   A /trunk/app/helpers/list_list_helper.rb
+   A /trunk/app/helpers/list_talk_helper.rb
+   A /trunk/app/helpers/list_user_helper.rb
+   A /trunk/app/helpers/login_helper.rb
+   A /trunk/app/helpers/reminder_helper.rb
+   A /trunk/app/helpers/search_helper.rb
+   A /trunk/app/helpers/show_helper.rb
+   A /trunk/app/helpers/statistics_helper.rb
+   A /trunk/app/helpers/talk_helper.rb
+   A /trunk/app/helpers/tickles_helper.rb
+   A /trunk/app/helpers/user_helper.rb
+   A /trunk/app/models
+   A /trunk/app/models/custom_view.rb
+   A /trunk/app/models/document.rb
+   A /trunk/app/models/email_subscription.rb
+   A /trunk/app/models/image.rb
+   A /trunk/app/models/list.rb
+   A /trunk/app/models/list_list.rb
+   A /trunk/app/models/list_talk.rb
+   A /trunk/app/models/list_user.rb
+   A /trunk/app/models/listing.rb
+   A /trunk/app/models/mailer.rb
+   A /trunk/app/models/related_list.rb
+   A /trunk/app/models/related_talk.rb
+   A /trunk/app/models/talk.rb
+   A /trunk/app/models/talk_finder.rb
+   A /trunk/app/models/tickle.rb
+   A /trunk/app/models/user.rb
+   A /trunk/app/models/venue.rb
+   A /trunk/app/views
+   A /trunk/app/views/custom_view
+   A /trunk/app/views/custom_view/_embed_url.rhtml
+   A /trunk/app/views/custom_view/_url.rhtml
+   A /trunk/app/views/custom_view/embed_example.rhtml
+   A /trunk/app/views/custom_view/embed_example2.rhtml
+   A /trunk/app/views/custom_view/embed_example3.rhtml
+   A /trunk/app/views/custom_view/embed_example4.rhtml
+   A /trunk/app/views/custom_view/embed_example5.rhtml
+   A /trunk/app/views/custom_view/index.rhtml
+   A /trunk/app/views/document
+   A /trunk/app/views/document/edit.rhtml
+   A /trunk/app/views/document/index.rhtml
+   A /trunk/app/views/document/recent_changes.rhtml
+   A /trunk/app/views/document/save.rhtml
+   A /trunk/app/views/document/show.rhtml
+   A /trunk/app/views/image
+   A /trunk/app/views/index
+   A /trunk/app/views/index/_selector.rhtml
+   A /trunk/app/views/index/dates.rhtml
+   A /trunk/app/views/index/lists.rhtml
+   A /trunk/app/views/index/talks.rhtml
+   A /trunk/app/views/index/users.rhtml
+   A /trunk/app/views/index/venues.rhtml
+   A /trunk/app/views/layouts
+   A /trunk/app/views/layouts/application.rhtml
+   A /trunk/app/views/layouts/email.rhtml
+   A /trunk/app/views/layouts/embed.rhtml
+   A /trunk/app/views/layouts/embedcss.rhtml
+   A /trunk/app/views/layouts/empty.rhtml
+   A /trunk/app/views/layouts/front.rhtml
+   A /trunk/app/views/layouts/minimal.rhtml
+   A /trunk/app/views/layouts/users.rhtml
+   A /trunk/app/views/layouts/with_related.rhtml
+   A /trunk/app/views/list
+   A /trunk/app/views/list/_add_list.rhtml
+   A /trunk/app/views/list/_add_talk_list.rhtml
+   A /trunk/app/views/list/_list.rhtml
+   A /trunk/app/views/list/_list_details.rhtml
+   A /trunk/app/views/list/_manager.rhtml
+   A /trunk/app/views/list/choose.rhtml
+   A /trunk/app/views/list/edit.rhtml
+   A /trunk/app/views/list/edit_details.rhtml
+   A /trunk/app/views/list/index.rhtml
+   A /trunk/app/views/list/new.rhtml
+   A /trunk/app/views/list_list
+   A /trunk/app/views/list_list/create.rhtml
+   A /trunk/app/views/list_list/edit.rhtml
+   A /trunk/app/views/list_talk
+   A /trunk/app/views/list_talk/create.rhtml
+   A /trunk/app/views/list_talk/edit.rhtml
+   A /trunk/app/views/list_user
+   A /trunk/app/views/list_user/create.rhtml
+   A /trunk/app/views/list_user/destroy.rhtml
+   A /trunk/app/views/list_user/edit.rhtml
+   A /trunk/app/views/list_user/index.rhtml
+   A /trunk/app/views/login
+   A /trunk/app/views/login/index.rhtml
+   A /trunk/app/views/login/logout.rhtml
+   A /trunk/app/views/login/lost_password.rhtml
+   A /trunk/app/views/login/new_user.rhtml
+   A /trunk/app/views/login/other_users.rhtml
+   A /trunk/app/views/login/password_sent.rhtml
+   A /trunk/app/views/mailer
+   A /trunk/app/views/mailer/daily_list.text.plain.rhtml
+   A /trunk/app/views/mailer/list_tickle.rhtml
+   A /trunk/app/views/mailer/password.rhtml
+   A /trunk/app/views/mailer/speaker_invite.rhtml
+   A /trunk/app/views/mailer/talk_tickle.rhtml
+   A /trunk/app/views/mailer/weekly_list.text.plain.rhtml
+   A /trunk/app/views/reminder
+   A /trunk/app/views/reminder/index.rhtml
+   A /trunk/app/views/search
+   A /trunk/app/views/search/_frontpagetalk.rhtml
+   A /trunk/app/views/search/_leftbar.rhtml
+   A /trunk/app/views/search/_list_result.rhtml
+   A /trunk/app/views/search/_result.rhtml
+   A /trunk/app/views/search/_search.rhtml
+   A /trunk/app/views/search/_user_result.rhtml
+   A /trunk/app/views/search/index.rhtml
+   A /trunk/app/views/search/results.rhtml
+   A /trunk/app/views/shared
+   A /trunk/app/views/shared/_sidebox.rhtml
+   A /trunk/app/views/shared/_tell_a_friend.rhtml
+   A /trunk/app/views/shared/breadcrumbs.rhtml
+   A /trunk/app/views/shared/footer.rhtml
+   A /trunk/app/views/shared/header.rhtml
+   A /trunk/app/views/shared/headerlogos.rhtml
+   A /trunk/app/views/shared/help.rhtml
+   A /trunk/app/views/shared/login.rhtml
+   A /trunk/app/views/shared/navigationbar.rhtml
+   A /trunk/app/views/shared/small_search_box.rhtml
+   A /trunk/app/views/shared/user_information.rhtml
+   A /trunk/app/views/show
+   A /trunk/app/views/show/_list_details.rhtml
+   A /trunk/app/views/show/_related.rhtml
+   A /trunk/app/views/show/_rss_talk.rhtml
+   A /trunk/app/views/show/_simple_talk.rhtml
+   A /trunk/app/views/show/asnc_regular.rhtml
+   A /trunk/app/views/show/cam_events.rhtml
+   A /trunk/app/views/show/detailed.rhtml
+   A /trunk/app/views/show/email.rhtml
+   A /trunk/app/views/show/google.rxml
+   A /trunk/app/views/show/heritage_group.rhtml
+   A /trunk/app/views/show/ics.rxml
+   A /trunk/app/views/show/index.rhtml
+   A /trunk/app/views/show/minimalist.rhtml
+   A /trunk/app/views/show/old_talks.rhtml
+   A /trunk/app/views/show/oneday.rhtml
+   A /trunk/app/views/show/rss.rxml
+   A /trunk/app/views/show/simplewithlogo.rhtml
+   A /trunk/app/views/show/table.rhtml
+   A /trunk/app/views/show/text.rhtml
+   A /trunk/app/views/show/xml.rxml
+   A /trunk/app/views/show/zoology.rhtml
+   A /trunk/app/views/statistics
+   A /trunk/app/views/statistics/index.rhtml
+   A /trunk/app/views/talk
+   A /trunk/app/views/talk/_help_.rhtml
+   A /trunk/app/views/talk/_help_talk_abstract.rhtml
+   A /trunk/app/views/talk/_help_talk_date_string.rhtml
+   A /trunk/app/views/talk/_help_talk_end_time_string.rhtml
+   A /trunk/app/views/talk/_help_talk_ex_directory.rhtml
+   A /trunk/app/views/talk/_help_talk_image.rhtml
+   A /trunk/app/views/talk/_help_talk_name_of_speaker.rhtml
+   A /trunk/app/views/talk/_help_talk_organiser_email.rhtml
+   A /trunk/app/views/talk/_help_talk_send_speaker_email.rhtml
+   A /trunk/app/views/talk/_help_talk_speaker_email.rhtml
+   A /trunk/app/views/talk/_help_talk_special_message.rhtml
+   A /trunk/app/views/talk/_help_talk_start_time_string.rhtml
+   A /trunk/app/views/talk/_help_talk_title.rhtml
+   A /trunk/app/views/talk/_help_talk_venue_name.rhtml
+   A /trunk/app/views/talk/_help_undefined.rhtml
+   A /trunk/app/views/talk/_related.rhtml
+   A /trunk/app/views/talk/_timing.rhtml
+   A /trunk/app/views/talk/_user.rhtml
+   A /trunk/app/views/talk/_venue.rhtml
+   A /trunk/app/views/talk/delete.rhtml
+   A /trunk/app/views/talk/edit.rhtml
+   A /trunk/app/views/talk/index.rhtml
+   A /trunk/app/views/tickles
+   A /trunk/app/views/tickles/index.rhtml
+   A /trunk/app/views/tickles/new.rhtml
+   A /trunk/app/views/tickles/show.rhtml
+   A /trunk/app/views/user
+   A /trunk/app/views/user/change_password.rhtml
+   A /trunk/app/views/user/edit.rhtml
+   A /trunk/app/views/user/lists.rhtml
+   A /trunk/app/views/user/new.rhtml
+   A /trunk/app/views/user/password_sent.rhtml
+   A /trunk/app/views/user/show.rhtml
+   A /trunk/app/views/user/talks.rhtml
+   A /trunk/boring
+   A /trunk/config
+   A /trunk/config/boot.rb
+   A /trunk/config/database.yml
+   A /trunk/config/database.yml.example
+   A /trunk/config/environment.rb
+   A /trunk/config/environments
+   A /trunk/config/environments/development.rb
+   A /trunk/config/environments/production.rb
+   A /trunk/config/environments/test.rb
+   A /trunk/config/pubkey2.txt
+   A /trunk/config/pubkey901.txt
+   A /trunk/config/routes.rb
+   A /trunk/db
+   A /trunk/db/migrate
+   A /trunk/db/migrate/001_initial_schema.rb
+   A /trunk/db/migrate/002_add_custom_view.rb
+   A /trunk/db/migrate/003_add_image_upload.rb
+   A /trunk/db/migrate/004_add_organiser.rb
+   A /trunk/db/migrate/005_initial_data.rb
+   A /trunk/db/migrate/006_serendipity.rb
+   A /trunk/db/migrate/007_create_email_subscriptions.rb
+   A /trunk/db/migrate/008_create_documents.rb
+   A /trunk/db/migrate/009_add_details_to_document.rb
+   A /trunk/db/migrate/010_add_ex_directory.rb
+   A /trunk/db/migrate/011_add_import_columns.rb
+   A /trunk/db/migrate/012_refactor_relationships.rb
+   A /trunk/db/migrate/013_add_last_login_to_user.rb
+   A /trunk/db/migrate/014_add_database_indexes.rb
+   A /trunk/db/migrate/015_add_ex_directory_to_talk.rb
+   A /trunk/db/migrate/016_refactor_custom_view.rb
+   A /trunk/db/migrate/017_add_crsid_to_user.rb
+   A /trunk/db/migrate/018_extend_affiliation_column.rb
+   A /trunk/db/migrate/019_remove_default_from_talk.rb
+   A /trunk/db/migrate/020_add_sessions.rb
+   A /trunk/db/migrate/021_create_images.rb
+   A /trunk/db/migrate/022_new_image_relations.rb
+   A /trunk/db/migrate/023_rework_list_links.rb
+   A /trunk/db/migrate/024_add_created_at_and_updated_at_to_list.rb
+   A /trunk/db/migrate/025_drop_image_field_from_models.rb
+   A /trunk/db/migrate/026_create_tickles.rb
+   A /trunk/db/migrate/027_give_user_a_name_for_sort.rb
+   A /trunk/db/migrate/028_create_list_users.rb
+   A /trunk/dependencies.txt
+   A /trunk/lib
+   A /trunk/lib/belongs_to_image.rb
+   A /trunk/lib/check_for_user.rb
+   A /trunk/lib/clean_utf.rb
+   A /trunk/lib/common_link_methods.rb
+   A /trunk/lib/file_cgi_compatability.rb
+   A /trunk/lib/find_direct_extension.rb
+   A /trunk/lib/icalendar_extensions.rb
+   A /trunk/lib/periodic_tasks.rb
+   A /trunk/lib/prevent_script_attacks.rb
+   A /trunk/lib/redcloth.rb
+   A /trunk/lib/relatable.rb
+   A /trunk/lib/tasks
+   A /trunk/lib/tasks/dev.rake
+   A /trunk/lib/tasks/emailer.rake
+   A /trunk/lib/tasks/setup.rake
+   A /trunk/lib/tasks/update_relationships.rake
+   A /trunk/lib/textile_to_html.rb
+   A /trunk/lib/usual_details.rb
+   A /trunk/log
+   A /trunk/public
+   A /trunk/public/.htaccess
+   A /trunk/public/404.html
+   A /trunk/public/500.html
+   A /trunk/public/dispatch.cgi
+   A /trunk/public/dispatch.fcgi
+   A /trunk/public/dispatch.rb
+   A /trunk/public/favicon.ico
+   A /trunk/public/image
+   A /trunk/public/images
+   A /trunk/public/images/add.png
+   A /trunk/public/images/alert.gif
+   A /trunk/public/images/az.gif
+   A /trunk/public/images/biglogo.gif
+   A /trunk/public/images/blank.gif
+   A /trunk/public/images/bullet.gif
+   A /trunk/public/images/calendar_add.png
+   A /trunk/public/images/clock.jpg
+   A /trunk/public/images/contact.gif
+   A /trunk/public/images/curelogo.gif
+   A /trunk/public/images/delete.png
+   A /trunk/public/images/favicon.ico
+   A /trunk/public/images/frontpageimage.gif
+   A /trunk/public/images/help.gif
+   A /trunk/public/images/home.gif
+   A /trunk/public/images/house.jpg
+   A /trunk/public/images/ical.gif
+   A /trunk/public/images/identifier1.gif
+   A /trunk/public/images/identifier2.gif
+   A /trunk/public/images/login.gif
+   A /trunk/public/images/more.gif
+   A /trunk/public/images/navbg.gif
+   A /trunk/public/images/news.gif
+   A /trunk/public/images/pixel.gif
+   A /trunk/public/images/previews
+   A /trunk/public/images/previews/asnc_regular_thumb.jpg
+   A /trunk/public/images/previews/cam_events_thumb.jpg
+   A /trunk/public/images/previews/heritage_thumb.jpg
+   A /trunk/public/images/previews/zoology_thumb.jpg
+   A /trunk/public/images/rails.png
+   A /trunk/public/images/ravenlogo.gif
+   A /trunk/public/images/reallybigtalkslogo.gif
+   A /trunk/public/images/redarrow.gif
+   A /trunk/public/images/search.gif
+   A /trunk/public/images/talkslogosmall.gif
+   A /trunk/public/images/upredarrow.gif
+   A /trunk/public/images/user.jpg
+   A /trunk/public/images/zoom.png
+   A /trunk/public/javascripts
+   A /trunk/public/javascripts/application.js
+   A /trunk/public/javascripts/behaviour.js
+   A /trunk/public/javascripts/calendar-en.js
+   A /trunk/public/javascripts/calendar-setup.js
+   A /trunk/public/javascripts/calendar.js
+   A /trunk/public/javascripts/controls.js
+   A /trunk/public/javascripts/dragdrop.js
+   A /trunk/public/javascripts/effects.js
+   A /trunk/public/javascripts/prototype.js
+   A /trunk/public/list
+   A /trunk/public/list/image
+   A /trunk/public/robots.txt
+   A /trunk/public/stylesheets
+   A /trunk/public/stylesheets/calendar-blue.css
+   A /trunk/public/stylesheets/embedcss.css
+   A /trunk/public/stylesheets/scaffold.css
+   A /trunk/public/stylesheets/talks-print.css
+   A /trunk/public/stylesheets/talks-screen.css
+   A /trunk/public/talk
+   A /trunk/public/user
+   A /trunk/public/user/image
+   A /trunk/public/user/image/tmp
+   A /trunk/script
+   A /trunk/script/about
+   A /trunk/script/breakpointer
+   A /trunk/script/console
+   A /trunk/script/destroy
+   A /trunk/script/execute_daily_tasks
+   A /trunk/script/generate
+   A /trunk/script/performance
+   A /trunk/script/performance/benchmarker
+   A /trunk/script/performance/profiler
+   A /trunk/script/plugin
+   A /trunk/script/process
+   A /trunk/script/process/inspector
+   A /trunk/script/process/reaper
+   A /trunk/script/process/spawner
+   A /trunk/script/process/spinner
+   A /trunk/script/rails_spec_server
+   A /trunk/script/rest_helper
+   A /trunk/script/runner
+   A /trunk/script/server
+   A /trunk/script/talk-upload-example.rb
+   A /trunk/spec
+   A /trunk/spec/lib
+   A /trunk/spec/lib/icalendar_extensions_spec.rb
+   A /trunk/spec/spec.opts
+   A /trunk/spec/spec_helper.rb
+   A /trunk/test
+   A /trunk/test/fixtures
+   A /trunk/test/fixtures/custom_views.yml
+   A /trunk/test/fixtures/documents.yml
+   A /trunk/test/fixtures/email_subscriptions.yml
+   A /trunk/test/fixtures/images.yml
+   A /trunk/test/fixtures/list_lists.yml
+   A /trunk/test/fixtures/list_talks.yml
+   A /trunk/test/fixtures/list_users.yml
+   A /trunk/test/fixtures/lists.yml
+   A /trunk/test/fixtures/mailer
+   A /trunk/test/fixtures/mailer/password
+   A /trunk/test/fixtures/related_lists.yml
+   A /trunk/test/fixtures/related_talks.yml
+   A /trunk/test/fixtures/talks.yml
+   A /trunk/test/fixtures/tickles.yml
+   A /trunk/test/fixtures/users.yml
+   A /trunk/test/functional
+   A /trunk/test/functional/custom_view_controller_test.rb
+   A /trunk/test/functional/document_controller_test.rb
+   A /trunk/test/functional/image_controller_test.rb
+   A /trunk/test/functional/index_controller_test.rb
+   A /trunk/test/functional/list_controller_test.rb
+   A /trunk/test/functional/list_list_controller_test.rb
+   A /trunk/test/functional/list_talk_controller_test.rb
+   A /trunk/test/functional/list_user_controller_test.rb
+   A /trunk/test/functional/login_controller_test.rb
+   A /trunk/test/functional/reminder_controller_test.rb
+   A /trunk/test/functional/search_controller_test.rb
+   A /trunk/test/functional/show_controller_test.rb
+   A /trunk/test/functional/show_helper_test.rb
+   A /trunk/test/functional/statistics_controller_test.rb
+   A /trunk/test/functional/talk_controller_test.rb
+   A /trunk/test/functional/tickles_controller_test.rb
+   A /trunk/test/functional/user_controller_test.rb
+   A /trunk/test/integration
+   A /trunk/test/integration/login_test.rb
+   A /trunk/test/integration/talk_create_test.rb
+   A /trunk/test/mocks
+   A /trunk/test/mocks/development
+   A /trunk/test/mocks/test
+   A /trunk/test/test_helper.rb
+   A /trunk/test/unit
+   A /trunk/test/unit/custom_view_test.rb
+   A /trunk/test/unit/document_test.rb
+   A /trunk/test/unit/image_test.rb
+   A /trunk/test/unit/list_list_test.rb
+   A /trunk/test/unit/list_talk_test.rb
+   A /trunk/test/unit/list_test.rb
+   A /trunk/test/unit/list_user_test.rb
+   A /trunk/test/unit/mailer_test.rb
+   A /trunk/test/unit/related_list_test.rb
+   A /trunk/test/unit/related_talk_test.rb
+   A /trunk/test/unit/talk_finder_test.rb
+   A /trunk/test/unit/talk_test.rb
+   A /trunk/test/unit/tickle_test.rb
+   A /trunk/test/unit/user_test.rb
+   A /trunk/test/unit/venue_test.rb
+   A /trunk/tmp
+   A /trunk/vendor
+   A /trunk/vendor/plugins
+   A /trunk/vendor/plugins/acts_as_versioned
+   A /trunk/vendor/plugins/acts_as_versioned/CHANGELOG
+   A /trunk/vendor/plugins/acts_as_versioned/MIT-LICENSE
+   A /trunk/vendor/plugins/acts_as_versioned/README
+   A /trunk/vendor/plugins/acts_as_versioned/RUNNING_UNIT_TESTS
+   A /trunk/vendor/plugins/acts_as_versioned/Rakefile
+   A /trunk/vendor/plugins/acts_as_versioned/init.rb
+   A /trunk/vendor/plugins/acts_as_versioned/lib
+   A /trunk/vendor/plugins/acts_as_versioned/lib/acts_as_versioned.rb
+   A /trunk/vendor/plugins/acts_as_versioned/test
+   A /trunk/vendor/plugins/acts_as_versioned/test/abstract_unit.rb
+   A /trunk/vendor/plugins/acts_as_versioned/test/database.yml
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures/authors.yml
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures/locked_pages.yml
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures/locked_pages_revisions.yml
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures/migrations
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures/migrations/1_add_versioned_tables.rb
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures/page.rb
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures/page_versions.yml
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures/pages.yml
+   A /trunk/vendor/plugins/acts_as_versioned/test/fixtures/widget.rb
+   A /trunk/vendor/plugins/acts_as_versioned/test/migration_test.rb
+   A /trunk/vendor/plugins/acts_as_versioned/test/schema.rb
+   A /trunk/vendor/plugins/acts_as_versioned/test/versioned_test.rb
+   A /trunk/vendor/plugins/annotate_models
+   A /trunk/vendor/plugins/annotate_models/README
+   A /trunk/vendor/plugins/annotate_models/lib
+   A /trunk/vendor/plugins/annotate_models/lib/annotate_models.rb
+   A /trunk/vendor/plugins/annotate_models/tasks
+   A /trunk/vendor/plugins/annotate_models/tasks/annotate_models_tasks.rake
+   A /trunk/vendor/plugins/exception_notification
+   A /trunk/vendor/plugins/exception_notification/README
+   A /trunk/vendor/plugins/exception_notification/init.rb
+   A /trunk/vendor/plugins/exception_notification/lib
+   A /trunk/vendor/plugins/exception_notification/lib/exception_notifiable.rb
+   A /trunk/vendor/plugins/exception_notification/lib/exception_notifier.rb
+   A /trunk/vendor/plugins/exception_notification/lib/exception_notifier_helper.rb
+   A /trunk/vendor/plugins/exception_notification/views
+   A /trunk/vendor/plugins/exception_notification/views/exception_notifier
+   A /trunk/vendor/plugins/exception_notification/views/exception_notifier/_backtrace.rhtml
+   A /trunk/vendor/plugins/exception_notification/views/exception_notifier/_environment.rhtml
+   A /trunk/vendor/plugins/exception_notification/views/exception_notifier/_inspect_model.rhtml
+   A /trunk/vendor/plugins/exception_notification/views/exception_notifier/_request.rhtml
+   A /trunk/vendor/plugins/exception_notification/views/exception_notifier/_session.rhtml
+   A /trunk/vendor/plugins/exception_notification/views/exception_notifier/_title.rhtml
+   A /trunk/vendor/plugins/exception_notification/views/exception_notifier/exception_notification.rhtml
+   A /trunk/vendor/plugins/memory_test_fix
+   A /trunk/vendor/plugins/memory_test_fix/README
+   A /trunk/vendor/plugins/memory_test_fix/Rakefile
+   A /trunk/vendor/plugins/memory_test_fix/about.yml
+   A /trunk/vendor/plugins/memory_test_fix/init.rb
+   A /trunk/vendor/plugins/memory_test_fix/lib
+   A /trunk/vendor/plugins/memory_test_fix/lib/memory_test_fix.rb
+   A /trunk/vendor/plugins/rails_rcov
+   A /trunk/vendor/plugins/rails_rcov/MIT-LICENSE
+   A /trunk/vendor/plugins/rails_rcov/README
+   A /trunk/vendor/plugins/rails_rcov/tasks
+   A /trunk/vendor/plugins/rails_rcov/tasks/rails_rcov.rake
+   A /trunk/vendor/plugins/verbose_migrations
+   A /trunk/vendor/plugins/verbose_migrations/MIT-LICENSE
+   A /trunk/vendor/plugins/verbose_migrations/README
+   A /trunk/vendor/plugins/verbose_migrations/init.rb
+   A /trunk/vendor/plugins/verbose_migrations/lib
+   A /trunk/vendor/plugins/verbose_migrations/lib/verbose_migrations.rb
+   A /trunk/vendor/rails
+   A /trunk/vendor/rails/actionmailer
+   A /trunk/vendor/rails/actionmailer/CHANGELOG
+   A /trunk/vendor/rails/actionmailer/MIT-LICENSE
+   A /trunk/vendor/rails/actionmailer/README
+   A /trunk/vendor/rails/actionmailer/Rakefile
+   A /trunk/vendor/rails/actionmailer/install.rb
+   A /trunk/vendor/rails/actionmailer/lib
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/adv_attr_accessor.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/base.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/helpers.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/mail_helper.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/part.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/part_container.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/quoting.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/utils.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/text
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/text/format.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/attachments.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/base64.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/config.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/facade.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/header.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/info.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/loader.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/mail.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/mbox.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/net.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/obsolete.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/parser.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/quoting.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/scanner.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/scanner_r.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/stringio.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/tmail.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/vendor/tmail.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer/version.rb
+   A /trunk/vendor/rails/actionmailer/lib/action_mailer.rb
+   A /trunk/vendor/rails/actionmailer/test
+   A /trunk/vendor/rails/actionmailer/test/abstract_unit.rb
+   A /trunk/vendor/rails/actionmailer/test/fixtures
+   A /trunk/vendor/rails/actionmailer/test/fixtures/first_mailer
+   A /trunk/vendor/rails/actionmailer/test/fixtures/first_mailer/share.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/helper_mailer
+   A /trunk/vendor/rails/actionmailer/test/fixtures/helper_mailer/use_helper.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/helper_mailer/use_helper_method.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/helper_mailer/use_mail_helper.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/helper_mailer/use_test_helper.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/helpers
+   A /trunk/vendor/rails/actionmailer/test/fixtures/helpers/test_helper.rb
+   A /trunk/vendor/rails/actionmailer/test/fixtures/path.with.dots
+   A /trunk/vendor/rails/actionmailer/test/fixtures/path.with.dots/funky_path_mailer
+   A /trunk/vendor/rails/actionmailer/test/fixtures/path.with.dots/funky_path_mailer/multipart_with_template_path_with_dots.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/path.with.dots/multipart_with_template_path_with_dots.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email10
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email11
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email12
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email13
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email2
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email3
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email4
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email5
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email6
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email7
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email8
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email9
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email_quoted_with_0d0a
+   A /trunk/vendor/rails/actionmailer/test/fixtures/raw_email_with_partially_quoted_subject
+   A /trunk/vendor/rails/actionmailer/test/fixtures/second_mailer
+   A /trunk/vendor/rails/actionmailer/test/fixtures/second_mailer/share.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/templates
+   A /trunk/vendor/rails/actionmailer/test/fixtures/templates/signed_up.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/test_mailer
+   A /trunk/vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.ignored.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.html.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.plain.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.yaml.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/test_mailer/signed_up.rhtml
+   A /trunk/vendor/rails/actionmailer/test/fixtures/test_mailer/signed_up_with_url.rhtml
+   A /trunk/vendor/rails/actionmailer/test/mail_helper_test.rb
+   A /trunk/vendor/rails/actionmailer/test/mail_render_test.rb
+   A /trunk/vendor/rails/actionmailer/test/mail_service_test.rb
+   A /trunk/vendor/rails/actionmailer/test/quoting_test.rb
+   A /trunk/vendor/rails/actionmailer/test/tmail_test.rb
+   A /trunk/vendor/rails/actionmailer/test/url_test.rb
+   A /trunk/vendor/rails/actionpack
+   A /trunk/vendor/rails/actionpack/CHANGELOG
+   A /trunk/vendor/rails/actionpack/MIT-LICENSE
+   A /trunk/vendor/rails/actionpack/README
+   A /trunk/vendor/rails/actionpack/RUNNING_UNIT_TESTS
+   A /trunk/vendor/rails/actionpack/Rakefile
+   A /trunk/vendor/rails/actionpack/examples
+   A /trunk/vendor/rails/actionpack/examples/.htaccess
+   A /trunk/vendor/rails/actionpack/examples/address_book
+   A /trunk/vendor/rails/actionpack/examples/address_book/index.rhtml
+   A /trunk/vendor/rails/actionpack/examples/address_book/layout.rhtml
+   A /trunk/vendor/rails/actionpack/examples/address_book_controller.cgi
+   A /trunk/vendor/rails/actionpack/examples/address_book_controller.fcgi
+   A /trunk/vendor/rails/actionpack/examples/address_book_controller.rb
+   A /trunk/vendor/rails/actionpack/examples/address_book_controller.rbx
+   A /trunk/vendor/rails/actionpack/examples/benchmark.rb
+   A /trunk/vendor/rails/actionpack/examples/benchmark_with_ar.fcgi
+   A /trunk/vendor/rails/actionpack/examples/blog_controller.cgi
+   A /trunk/vendor/rails/actionpack/examples/debate
+   A /trunk/vendor/rails/actionpack/examples/debate/index.rhtml
+   A /trunk/vendor/rails/actionpack/examples/debate/new_topic.rhtml
+   A /trunk/vendor/rails/actionpack/examples/debate/topic.rhtml
+   A /trunk/vendor/rails/actionpack/examples/debate_controller.cgi
+   A /trunk/vendor/rails/actionpack/install.rb
+   A /trunk/vendor/rails/actionpack/lib
+   A /trunk/vendor/rails/actionpack/lib/action_controller
+   A /trunk/vendor/rails/actionpack/lib/action_controller/assertions
+   A /trunk/vendor/rails/actionpack/lib/action_controller/assertions/deprecated_assertions.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/assertions/dom_assertions.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/assertions/model_assertions.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/assertions/response_assertions.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/assertions/routing_assertions.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/assertions/selector_assertions.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/assertions/tag_assertions.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/assertions.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/base.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/benchmarking.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/caching.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/cgi_ext
+   A /trunk/vendor/rails/actionpack/lib/action_controller/cgi_ext/cgi_ext.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/cgi_ext/cgi_methods.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/cgi_ext/raw_post_data_fix.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/cgi_ext/session_performance_fix.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/cgi_process.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/components.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/cookies.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/deprecated_dependencies.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/deprecated_redirects.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/deprecated_request_methods.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/filters.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/flash.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/helpers.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/integration.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/layout.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/macros
+   A /trunk/vendor/rails/actionpack/lib/action_controller/macros/auto_complete.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/macros/in_place_editing.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/mime_responds.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/mime_type.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/pagination.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/request.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/rescue.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/resources.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/response.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/routing.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/scaffolding.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/session
+   A /trunk/vendor/rails/actionpack/lib/action_controller/session/active_record_store.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/session/drb_server.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/session/drb_store.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/session/mem_cache_store.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/session_management.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/status_codes.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/streaming.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/diagnostics.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/missing_template.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/routing_error.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/template_error.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/rescues/unknown_action.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/scaffolds
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/scaffolds/edit.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/scaffolds/layout.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/scaffolds/list.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/scaffolds/new.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/templates/scaffolds/show.rhtml
+   A /trunk/vendor/rails/actionpack/lib/action_controller/test_process.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/url_rewriter.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/vendor
+   A /trunk/vendor/rails/actionpack/lib/action_controller/vendor/html-scanner
+   A /trunk/vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html
+   A /trunk/vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/document.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/node.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/selector.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/tokenizer.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/vendor/html-scanner/html/version.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/vendor/xml_node.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller/verification.rb
+   A /trunk/vendor/rails/actionpack/lib/action_controller.rb
+   A /trunk/vendor/rails/actionpack/lib/action_pack
+   A /trunk/vendor/rails/actionpack/lib/action_pack/version.rb
+   A /trunk/vendor/rails/actionpack/lib/action_pack.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view
+   A /trunk/vendor/rails/actionpack/lib/action_view/base.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/compiled_templates.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/active_record_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/asset_tag_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/benchmark_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/cache_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/capture_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/date_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/debug_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/deprecated_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/form_options_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/form_tag_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/java_script_macros_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/javascript_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/javascripts
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/javascripts/controls.js
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/javascripts/dragdrop.js
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/javascripts/effects.js
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/javascripts/prototype.js
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/number_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/pagination_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/prototype_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/scriptaculous_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/tag_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/text_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/helpers/url_helper.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/partials.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view/template_error.rb
+   A /trunk/vendor/rails/actionpack/lib/action_view.rb
+   A /trunk/vendor/rails/actionpack/test
+   A /trunk/vendor/rails/actionpack/test/abstract_unit.rb
+   A /trunk/vendor/rails/actionpack/test/active_record_unit.rb
+   A /trunk/vendor/rails/actionpack/test/activerecord
+   A /trunk/vendor/rails/actionpack/test/activerecord/active_record_assertions_test.rb
+   A /trunk/vendor/rails/actionpack/test/activerecord/active_record_store_test.rb
+   A /trunk/vendor/rails/actionpack/test/activerecord/pagination_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller
+   A /trunk/vendor/rails/actionpack/test/controller/action_pack_assertions_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/addresses_render_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/assert_select_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/base_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/benchmark_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/caching_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/capture_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/cgi_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/components_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/content_type_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/app
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/app/controllers
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/app/controllers/admin
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/app/controllers/admin/user_controller.rb
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/app/controllers/user_controller.rb
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/vendor
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/vendor/plugins
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/vendor/plugins/bad_plugin
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/vendor/plugins/bad_plugin/lib
+   A /trunk/vendor/rails/actionpack/test/controller/controller_fixtures/vendor/plugins/bad_plugin/lib/plugin_controller.rb
+   A /trunk/vendor/rails/actionpack/test/controller/cookie_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/custom_handler_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/deprecated_instance_variables_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/deprecation
+   A /trunk/vendor/rails/actionpack/test/controller/deprecation/deprecated_base_methods_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/fake_controllers.rb
+   A /trunk/vendor/rails/actionpack/test/controller/filter_params_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/filters_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/flash_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/fragment_store_setting_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/integration_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/layout_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/mime_responds_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/mime_type_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/new_render_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/raw_post_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/redirect_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/render_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/request_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/resources_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/routing_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/selector_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/send_file_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/session_management_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/test_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/url_rewriter_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/verification_test.rb
+   A /trunk/vendor/rails/actionpack/test/controller/webservice_test.rb
+   A /trunk/vendor/rails/actionpack/test/fixtures
+   A /trunk/vendor/rails/actionpack/test/fixtures/addresses
+   A /trunk/vendor/rails/actionpack/test/fixtures/addresses/list.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/companies.yml
+   A /trunk/vendor/rails/actionpack/test/fixtures/company.rb
+   A /trunk/vendor/rails/actionpack/test/fixtures/content_type
+   A /trunk/vendor/rails/actionpack/test/fixtures/content_type/render_default_content_types_for_respond_to.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/content_type/render_default_for_rhtml.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/content_type/render_default_for_rjs.rjs
+   A /trunk/vendor/rails/actionpack/test/fixtures/content_type/render_default_for_rxml.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/db_definitions
+   A /trunk/vendor/rails/actionpack/test/fixtures/db_definitions/sqlite.sql
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_cookies_ivar.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_cookies_method.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_flash_ivar.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_flash_method.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_headers_ivar.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_headers_method.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_params_ivar.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_params_method.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_request_ivar.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_request_method.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_response_ivar.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_response_method.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_session_ivar.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/deprecated_instance_variables/_session_method.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/developer.rb
+   A /trunk/vendor/rails/actionpack/test/fixtures/developers.yml
+   A /trunk/vendor/rails/actionpack/test/fixtures/developers_projects.yml
+   A /trunk/vendor/rails/actionpack/test/fixtures/fun
+   A /trunk/vendor/rails/actionpack/test/fixtures/fun/games
+   A /trunk/vendor/rails/actionpack/test/fixtures/fun/games/hello_world.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/helpers
+   A /trunk/vendor/rails/actionpack/test/fixtures/helpers/abc_helper.rb
+   A /trunk/vendor/rails/actionpack/test/fixtures/helpers/fun
+   A /trunk/vendor/rails/actionpack/test/fixtures/helpers/fun/games_helper.rb
+   A /trunk/vendor/rails/actionpack/test/fixtures/helpers/fun/pdf_helper.rb
+   A /trunk/vendor/rails/actionpack/test/fixtures/layout_tests
+   A /trunk/vendor/rails/actionpack/test/fixtures/layout_tests/layouts
+   A /trunk/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/controller_name_space
+   A /trunk/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/controller_name_space/nested.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/item.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/layout_test.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/third_party_template_library.mab
+   A /trunk/vendor/rails/actionpack/test/fixtures/layout_tests/views
+   A /trunk/vendor/rails/actionpack/test/fixtures/layout_tests/views/hello.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/layouts
+   A /trunk/vendor/rails/actionpack/test/fixtures/layouts/builder.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/layouts/standard.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/layouts/talk_from_action.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/layouts/yield.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/multipart
+   A /trunk/vendor/rails/actionpack/test/fixtures/multipart/binary_file
+   A /trunk/vendor/rails/actionpack/test/fixtures/multipart/large_text_file
+   A /trunk/vendor/rails/actionpack/test/fixtures/multipart/mixed_files
+   A /trunk/vendor/rails/actionpack/test/fixtures/multipart/mona_lisa.jpg
+   A /trunk/vendor/rails/actionpack/test/fixtures/multipart/single_parameter
+   A /trunk/vendor/rails/actionpack/test/fixtures/multipart/text_file
+   A /trunk/vendor/rails/actionpack/test/fixtures/project.rb
+   A /trunk/vendor/rails/actionpack/test/fixtures/projects.yml
+   A /trunk/vendor/rails/actionpack/test/fixtures/public
+   A /trunk/vendor/rails/actionpack/test/fixtures/public/images
+   A /trunk/vendor/rails/actionpack/test/fixtures/public/images/rails.png
+   A /trunk/vendor/rails/actionpack/test/fixtures/public/javascripts
+   A /trunk/vendor/rails/actionpack/test/fixtures/public/javascripts/application.js
+   A /trunk/vendor/rails/actionpack/test/fixtures/replies.yml
+   A /trunk/vendor/rails/actionpack/test/fixtures/reply.rb
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/all_types_with_layout.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/all_types_with_layout.rjs
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/layouts
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/layouts/standard.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/using_defaults.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/using_defaults.rjs
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/using_defaults.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/using_defaults_with_type_list.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/using_defaults_with_type_list.rjs
+   A /trunk/vendor/rails/actionpack/test/fixtures/respond_to/using_defaults_with_type_list.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/scope
+   A /trunk/vendor/rails/actionpack/test/fixtures/scope/test
+   A /trunk/vendor/rails/actionpack/test/fixtures/scope/test/modgreet.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/_customer.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/_customer_greeting.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/_hash_object.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/_hello.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/_partial_only.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/_person.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/action_talk_to_layout.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/block_content_for.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/capturing.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/content_for.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/delete_with_js.rjs
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/dot.directory
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/dot.directory/render_file_with_ivar.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/enum_rjs_test.rjs
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/erb_content_for.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/greeting.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/hello.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/hello_world.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/hello_world.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/hello_world_container.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/hello_world_with_layout_false.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/hello_xml_world.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/list.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/non_erb_block_content_for.rxml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/potential_conflicts.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/render_file_with_ivar.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/render_file_with_locals.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/render_to_string_test.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/test/update_element_with_capture.rhtml
+   A /trunk/vendor/rails/actionpack/test/fixtures/topic.rb
+   A /trunk/vendor/rails/actionpack/test/fixtures/topics.yml
+   A /trunk/vendor/rails/actionpack/test/template
+   A /trunk/vendor/rails/actionpack/test/template/active_record_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/asset_tag_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/benchmark_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/compiled_templates_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/date_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/deprecated_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/deprecated_instance_variables_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/form_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/form_options_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/form_tag_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/java_script_macros_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/javascript_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/number_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/prototype_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/scriptaculous_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/tag_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/text_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/template/url_helper_test.rb
+   A /trunk/vendor/rails/actionpack/test/testing_sandbox.rb
+   A /trunk/vendor/rails/actionwebservice
+   A /trunk/vendor/rails/actionwebservice/CHANGELOG
+   A /trunk/vendor/rails/actionwebservice/MIT-LICENSE
+   A /trunk/vendor/rails/actionwebservice/README
+   A /trunk/vendor/rails/actionwebservice/Rakefile
+   A /trunk/vendor/rails/actionwebservice/TODO
+   A /trunk/vendor/rails/actionwebservice/examples
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/README
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/autoloading
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/autoloading/google_search_api.rb
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/autoloading/google_search_controller.rb
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/delegated
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/delegated/google_search_service.rb
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/delegated/search_controller.rb
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/direct
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/direct/google_search_api.rb
+   A /trunk/vendor/rails/actionwebservice/examples/googlesearch/direct/search_controller.rb
+   A /trunk/vendor/rails/actionwebservice/examples/metaWeblog
+   A /trunk/vendor/rails/actionwebservice/examples/metaWeblog/README
+   A /trunk/vendor/rails/actionwebservice/examples/metaWeblog/apis
+   A /trunk/vendor/rails/actionwebservice/examples/metaWeblog/apis/blogger_api.rb
+   A /trunk/vendor/rails/actionwebservice/examples/metaWeblog/apis/blogger_service.rb
+   A /trunk/vendor/rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_api.rb
+   A /trunk/vendor/rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb
+   A /trunk/vendor/rails/actionwebservice/examples/metaWeblog/controllers
+   A /trunk/vendor/rails/actionwebservice/examples/metaWeblog/controllers/xmlrpc_controller.rb
+   A /trunk/vendor/rails/actionwebservice/lib
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/api.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/base.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/casting.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/client
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/client/base.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/client/soap_client.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/client/xmlrpc_client.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/client.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/container
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/container/action_controller_container.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/container/delegated_container.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/container/direct_container.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/container.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/dispatcher
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/dispatcher/abstract.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/dispatcher/action_controller_dispatcher.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/dispatcher.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/invocation.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/protocol
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/protocol/abstract.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/protocol/discovery.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol/marshaler.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/protocol/xmlrpc_protocol.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/protocol.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/scaffolding.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/struct.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/support
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/support/class_inheritable_options.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/support/signature_types.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/templates
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/layout.rhtml
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/methods.rhtml
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/parameters.rhtml
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/result.rhtml
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/test_invoke.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service/version.rb
+   A /trunk/vendor/rails/actionwebservice/lib/action_web_service.rb
+   A /trunk/vendor/rails/actionwebservice/setup.rb
+   A /trunk/vendor/rails/actionwebservice/test
+   A /trunk/vendor/rails/actionwebservice/test/abstract_client.rb
+   A /trunk/vendor/rails/actionwebservice/test/abstract_dispatcher.rb
+   A /trunk/vendor/rails/actionwebservice/test/abstract_unit.rb
+   A /trunk/vendor/rails/actionwebservice/test/api_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/apis
+   A /trunk/vendor/rails/actionwebservice/test/apis/auto_load_api.rb
+   A /trunk/vendor/rails/actionwebservice/test/apis/broken_auto_load_api.rb
+   A /trunk/vendor/rails/actionwebservice/test/base_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/casting_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/client_soap_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/client_xmlrpc_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/container_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/dispatcher_action_controller_xmlrpc_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/fixtures
+   A /trunk/vendor/rails/actionwebservice/test/fixtures/db_definitions
+   A /trunk/vendor/rails/actionwebservice/test/fixtures/db_definitions/mysql.sql
+   A /trunk/vendor/rails/actionwebservice/test/fixtures/users.yml
+   A /trunk/vendor/rails/actionwebservice/test/gencov
+   A /trunk/vendor/rails/actionwebservice/test/invocation_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/run
+   A /trunk/vendor/rails/actionwebservice/test/scaffolded_controller_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/struct_test.rb
+   A /trunk/vendor/rails/actionwebservice/test/test_invoke_test.rb
+   A /trunk/vendor/rails/activerecord
+   A /trunk/vendor/rails/activerecord/CHANGELOG
+   A /trunk/vendor/rails/activerecord/README
+   A /trunk/vendor/rails/activerecord/RUNNING_UNIT_TESTS
+   A /trunk/vendor/rails/activerecord/Rakefile
+   A /trunk/vendor/rails/activerecord/examples
+   A /trunk/vendor/rails/activerecord/examples/associations.png
+   A /trunk/vendor/rails/activerecord/examples/associations.rb
+   A /trunk/vendor/rails/activerecord/examples/shared_setup.rb
+   A /trunk/vendor/rails/activerecord/examples/validation.rb
+   A /trunk/vendor/rails/activerecord/install.rb
+   A /trunk/vendor/rails/activerecord/lib
+   A /trunk/vendor/rails/activerecord/lib/active_record
+   A /trunk/vendor/rails/activerecord/lib/active_record/acts
+   A /trunk/vendor/rails/activerecord/lib/active_record/acts/list.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/acts/nested_set.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/acts/tree.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/aggregations.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations/association_collection.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations/association_proxy.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations/belongs_to_association.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations/belongs_to_polymorphic_association.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations/has_and_belongs_to_many_association.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations/has_many_association.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations/has_many_through_association.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations/has_one_association.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/associations.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/attribute_methods.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/base.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/calculations.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/callbacks.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_specification.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/quoting.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/schema_statements.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/db2_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/firebird_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/frontbase_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/mysql_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/oracle_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/postgresql_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/sqlite_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/deprecated_associations.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/deprecated_finders.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/fixtures.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/locking
+   A /trunk/vendor/rails/activerecord/lib/active_record/locking/optimistic.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/locking/pessimistic.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/migration.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/observer.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/query_cache.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/reflection.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/schema.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/schema_dumper.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/timestamp.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/transactions.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/validations.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/vendor
+   A /trunk/vendor/rails/activerecord/lib/active_record/vendor/db2.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/vendor/mysql.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/vendor/simple.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/version.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/wrappers
+   A /trunk/vendor/rails/activerecord/lib/active_record/wrappers/yaml_wrapper.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/wrappings.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record/xml_serialization.rb
+   A /trunk/vendor/rails/activerecord/lib/active_record.rb
+   A /trunk/vendor/rails/activerecord/test
+   A /trunk/vendor/rails/activerecord/test/aaa_create_tables_test.rb
+   A /trunk/vendor/rails/activerecord/test/abstract_unit.rb
+   A /trunk/vendor/rails/activerecord/test/active_schema_test_mysql.rb
+   A /trunk/vendor/rails/activerecord/test/adapter_test.rb
+   A /trunk/vendor/rails/activerecord/test/adapter_test_sqlserver.rb
+   A /trunk/vendor/rails/activerecord/test/aggregations_test.rb
+   A /trunk/vendor/rails/activerecord/test/all.sh
+   A /trunk/vendor/rails/activerecord/test/ar_schema_test.rb
+   A /trunk/vendor/rails/activerecord/test/association_inheritance_reload.rb
+   A /trunk/vendor/rails/activerecord/test/associations
+   A /trunk/vendor/rails/activerecord/test/associations/callbacks_test.rb
+   A /trunk/vendor/rails/activerecord/test/associations/cascaded_eager_loading_test.rb
+   A /trunk/vendor/rails/activerecord/test/associations/eager_test.rb
+   A /trunk/vendor/rails/activerecord/test/associations/extension_test.rb
+   A /trunk/vendor/rails/activerecord/test/associations/join_model_test.rb
+   A /trunk/vendor/rails/activerecord/test/associations_test.rb
+   A /trunk/vendor/rails/activerecord/test/attribute_methods_test.rb
+   A /trunk/vendor/rails/activerecord/test/base_test.rb
+   A /trunk/vendor/rails/activerecord/test/binary_test.rb
+   A /trunk/vendor/rails/activerecord/test/calculations_test.rb
+   A /trunk/vendor/rails/activerecord/test/callbacks_test.rb
+   A /trunk/vendor/rails/activerecord/test/class_inheritable_attributes_test.rb
+   A /trunk/vendor/rails/activerecord/test/column_alias_test.rb
+   A /trunk/vendor/rails/activerecord/test/connection_test_firebird.rb
+   A /trunk/vendor/rails/activerecord/test/connections
+   A /trunk/vendor/rails/activerecord/test/connections/native_db2
+   A /trunk/vendor/rails/activerecord/test/connections/native_db2/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_firebird
+   A /trunk/vendor/rails/activerecord/test/connections/native_firebird/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_frontbase
+   A /trunk/vendor/rails/activerecord/test/connections/native_frontbase/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_mysql
+   A /trunk/vendor/rails/activerecord/test/connections/native_mysql/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_openbase
+   A /trunk/vendor/rails/activerecord/test/connections/native_openbase/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_oracle
+   A /trunk/vendor/rails/activerecord/test/connections/native_oracle/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_postgresql
+   A /trunk/vendor/rails/activerecord/test/connections/native_postgresql/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_sqlite
+   A /trunk/vendor/rails/activerecord/test/connections/native_sqlite/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_sqlite3
+   A /trunk/vendor/rails/activerecord/test/connections/native_sqlite3/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_sqlite3/in_memory_connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_sqlserver
+   A /trunk/vendor/rails/activerecord/test/connections/native_sqlserver/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_sqlserver_odbc
+   A /trunk/vendor/rails/activerecord/test/connections/native_sqlserver_odbc/connection.rb
+   A /trunk/vendor/rails/activerecord/test/connections/native_sybase
+   A /trunk/vendor/rails/activerecord/test/connections/native_sybase/connection.rb
+   A /trunk/vendor/rails/activerecord/test/copy_table_sqlite.rb
+   A /trunk/vendor/rails/activerecord/test/datatype_test_postgresql.rb
+   A /trunk/vendor/rails/activerecord/test/default_test_firebird.rb
+   A /trunk/vendor/rails/activerecord/test/defaults_test.rb
+   A /trunk/vendor/rails/activerecord/test/deprecated_associations_test.rb
+   A /trunk/vendor/rails/activerecord/test/deprecated_finder_test.rb
+   A /trunk/vendor/rails/activerecord/test/empty_date_time_test.rb
+   A /trunk/vendor/rails/activerecord/test/finder_test.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures
+   A /trunk/vendor/rails/activerecord/test/fixtures/accounts.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/author.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/author_favorites.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/authors.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/auto_id.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/bad_fixtures
+   A /trunk/vendor/rails/activerecord/test/fixtures/bad_fixtures/attr_with_numeric_first_char
+   A /trunk/vendor/rails/activerecord/test/fixtures/bad_fixtures/attr_with_spaces
+   A /trunk/vendor/rails/activerecord/test/fixtures/bad_fixtures/blank_line
+   A /trunk/vendor/rails/activerecord/test/fixtures/bad_fixtures/duplicate_attributes
+   A /trunk/vendor/rails/activerecord/test/fixtures/bad_fixtures/missing_value
+   A /trunk/vendor/rails/activerecord/test/fixtures/binary.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/categories
+   A /trunk/vendor/rails/activerecord/test/fixtures/categories/special_categories.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/categories/subsubdir
+   A /trunk/vendor/rails/activerecord/test/fixtures/categories/subsubdir/arbitrary_filename.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/categories.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/categories_ordered.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/categories_posts.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/categorization.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/categorizations.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/category.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/column_name.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/comment.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/comments.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/companies.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/company.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/company_in_module.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/computer.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/computers.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/course.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/courses.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/customer.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/customers.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/db2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/db2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/db22.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/db22.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/firebird.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/firebird.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/firebird2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/firebird2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/frontbase.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/frontbase.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/frontbase2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/frontbase2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/mysql.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/mysql.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/mysql2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/mysql2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/openbase.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/openbase.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/openbase2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/openbase2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/oracle.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/oracle.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/oracle2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/oracle2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/postgresql.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/postgresql.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/postgresql2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/postgresql2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/schema.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sqlite.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sqlite.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sqlite2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sqlite2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sqlserver2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sybase.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sybase.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sybase2.drop.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/db_definitions/sybase2.sql
+   A /trunk/vendor/rails/activerecord/test/fixtures/default.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/developer.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/developers.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/developers_projects
+   A /trunk/vendor/rails/activerecord/test/fixtures/developers_projects/david_action_controller
+   A /trunk/vendor/rails/activerecord/test/fixtures/developers_projects/david_active_record
+   A /trunk/vendor/rails/activerecord/test/fixtures/developers_projects/jamis_active_record
+   A /trunk/vendor/rails/activerecord/test/fixtures/developers_projects.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/edge.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/edges.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/entrant.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/entrants.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/fk_test_has_fk.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/fk_test_has_pk.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/flowers.jpg
+   A /trunk/vendor/rails/activerecord/test/fixtures/funny_jokes.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/joke.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/keyboard.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/legacy_thing.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/legacy_things.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations/1_people_have_last_names.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations/2_we_need_reminders.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations/3_innocent_jointable.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_decimal
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_decimal/1_give_me_big_numbers.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_duplicate
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_duplicate/1_people_have_last_names.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_duplicate/2_we_need_reminders.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_duplicate/3_foo.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_duplicate/3_innocent_jointable.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions/1000_people_have_middle_names.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions/1_people_have_last_names.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions/3_we_need_reminders.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions/4_innocent_jointable.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/mixed_case_monkey.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/mixed_case_monkeys.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/mixin.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/mixins.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/movie.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/movies.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/naked
+   A /trunk/vendor/rails/activerecord/test/fixtures/naked/csv
+   A /trunk/vendor/rails/activerecord/test/fixtures/naked/csv/accounts.csv
+   A /trunk/vendor/rails/activerecord/test/fixtures/naked/yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/naked/yml/accounts.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/naked/yml/companies.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/naked/yml/courses.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/order.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/people.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/person.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/post.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/posts.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/project.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/projects.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/reader.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/readers.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/reply.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/subject.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/subscriber.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/subscribers
+   A /trunk/vendor/rails/activerecord/test/fixtures/subscribers/first
+   A /trunk/vendor/rails/activerecord/test/fixtures/subscribers/second
+   A /trunk/vendor/rails/activerecord/test/fixtures/tag.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/tagging.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/taggings.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/tags.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/task.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/tasks.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/topic.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/topics.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures/vertex.rb
+   A /trunk/vendor/rails/activerecord/test/fixtures/vertices.yml
+   A /trunk/vendor/rails/activerecord/test/fixtures_test.rb
+   A /trunk/vendor/rails/activerecord/test/inheritance_test.rb
+   A /trunk/vendor/rails/activerecord/test/lifecycle_test.rb
+   A /trunk/vendor/rails/activerecord/test/locking_test.rb
+   A /trunk/vendor/rails/activerecord/test/method_scoping_test.rb
+   A /trunk/vendor/rails/activerecord/test/migration_test.rb
+   A /trunk/vendor/rails/activerecord/test/migration_test_firebird.rb
+   A /trunk/vendor/rails/activerecord/test/mixin_nested_set_test.rb
+   A /trunk/vendor/rails/activerecord/test/mixin_test.rb
+   A /trunk/vendor/rails/activerecord/test/modules_test.rb
+   A /trunk/vendor/rails/activerecord/test/multiple_db_test.rb
+   A /trunk/vendor/rails/activerecord/test/pk_test.rb
+   A /trunk/vendor/rails/activerecord/test/readonly_test.rb
+   A /trunk/vendor/rails/activerecord/test/reflection_test.rb
+   A /trunk/vendor/rails/activerecord/test/schema_authorization_test_postgresql.rb
+   A /trunk/vendor/rails/activerecord/test/schema_dumper_test.rb
+   A /trunk/vendor/rails/activerecord/test/schema_test_postgresql.rb
+   A /trunk/vendor/rails/activerecord/test/synonym_test_oracle.rb
+   A /trunk/vendor/rails/activerecord/test/table_name_test_sqlserver.rb
+   A /trunk/vendor/rails/activerecord/test/threaded_connections_test.rb
+   A /trunk/vendor/rails/activerecord/test/transactions_test.rb
+   A /trunk/vendor/rails/activerecord/test/unconnected_test.rb
+   A /trunk/vendor/rails/activerecord/test/validations_test.rb
+   A /trunk/vendor/rails/activerecord/test/xml_serialization_test.rb
+   A /trunk/vendor/rails/activesupport
+   A /trunk/vendor/rails/activesupport/CHANGELOG
+   A /trunk/vendor/rails/activesupport/README
+   A /trunk/vendor/rails/activesupport/lib
+   A /trunk/vendor/rails/activesupport/lib/active_support
+   A /trunk/vendor/rails/activesupport/lib/active_support/binding_of_caller.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/breakpoint.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/caching_tools.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/clean_logger.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/array
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/array/conversions.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/array/grouping.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/array.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/bigdecimal
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/bigdecimal/formatting.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/bigdecimal.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/blank.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/cgi
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/cgi/escape_skipping_slashes.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/cgi.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/class
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/class/attribute_accessors.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/class/inheritable_attributes.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/class/removal.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/class.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/date
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/date/conversions.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/date.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/enumerable.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/exception.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/hash
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/hash/conversions.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/hash/diff.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/hash/indifferent_access.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/hash/keys.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/hash/reverse_merge.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/hash.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/integer
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/integer/even_odd.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/integer/inflections.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/integer.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/kernel
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/kernel/agnostics.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/kernel/daemonizing.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/kernel/reporting.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/kernel/requires.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/kernel.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/load_error.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/logger.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/module
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/module/aliasing.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/module/attr_internal.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/module/attribute_accessors.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/module/delegation.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/module/inclusion.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/module/introspection.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/module/loading.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/module.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/name_error.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/numeric
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/numeric/bytes.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/numeric/time.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/numeric.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/object
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/object/extending.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/object/misc.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/object.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/pathname
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/pathname/clean_within.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/pathname.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/proc.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/range
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/range/conversions.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/range.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/string
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/string/access.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/string/conversions.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/string/inflections.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/string/iterators.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/string/starts_ends_with.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/string/unicode.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/string.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/symbol.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/time
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/time/calculations.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/time/conversions.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext/time.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/core_ext.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/dependencies.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/deprecation.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/inflections.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/inflector.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/json
+   A /trunk/vendor/rails/activesupport/lib/active_support/json/encoders
+   A /trunk/vendor/rails/activesupport/lib/active_support/json/encoders/core.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/json/encoders.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/json.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/multibyte
+   A /trunk/vendor/rails/activesupport/lib/active_support/multibyte/chars.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/multibyte/generators
+   A /trunk/vendor/rails/activesupport/lib/active_support/multibyte/generators/generate_tables.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/multibyte/handlers
+   A /trunk/vendor/rails/activesupport/lib/active_support/multibyte/handlers/passthru_handler.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/multibyte/handlers/utf8_handler.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/multibyte/handlers/utf8_handler_proc.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/multibyte.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/option_merger.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/ordered_options.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/reloadable.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/values
+   A /trunk/vendor/rails/activesupport/lib/active_support/values/time_zone.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/values/unicode_tables.dat
+   A /trunk/vendor/rails/activesupport/lib/active_support/vendor
+   A /trunk/vendor/rails/activesupport/lib/active_support/vendor/builder
+   A /trunk/vendor/rails/activesupport/lib/active_support/vendor/builder/blankslate.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/vendor/builder/xchar.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/vendor/builder/xmlbase.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/vendor/builder/xmlevents.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/vendor/builder/xmlmarkup.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/vendor/builder.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/vendor/xml_simple.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/version.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support/whiny_nil.rb
+   A /trunk/vendor/rails/activesupport/lib/active_support.rb
+   A /trunk/vendor/rails/railties
+   A /trunk/vendor/rails/railties/CHANGELOG
+   A /trunk/vendor/rails/railties/MIT-LICENSE
+   A /trunk/vendor/rails/railties/README
+   A /trunk/vendor/rails/railties/Rakefile
+   A /trunk/vendor/rails/railties/bin
+   A /trunk/vendor/rails/railties/bin/about
+   A /trunk/vendor/rails/railties/bin/breakpointer
+   A /trunk/vendor/rails/railties/bin/console
+   A /trunk/vendor/rails/railties/bin/destroy
+   A /trunk/vendor/rails/railties/bin/generate
+   A /trunk/vendor/rails/railties/bin/performance
+   A /trunk/vendor/rails/railties/bin/performance/benchmarker
+   A /trunk/vendor/rails/railties/bin/performance/profiler
+   A /trunk/vendor/rails/railties/bin/plugin
+   A /trunk/vendor/rails/railties/bin/process
+   A /trunk/vendor/rails/railties/bin/process/inspector
+   A /trunk/vendor/rails/railties/bin/process/reaper
+   A /trunk/vendor/rails/railties/bin/process/spawner
+   A /trunk/vendor/rails/railties/bin/rails
+   A /trunk/vendor/rails/railties/bin/runner
+   A /trunk/vendor/rails/railties/bin/server
+   A /trunk/vendor/rails/railties/builtin
+   A /trunk/vendor/rails/railties/builtin/rails_info
+   A /trunk/vendor/rails/railties/builtin/rails_info/rails
+   A /trunk/vendor/rails/railties/builtin/rails_info/rails/info.rb
+   A /trunk/vendor/rails/railties/builtin/rails_info/rails/info_controller.rb
+   A /trunk/vendor/rails/railties/builtin/rails_info/rails/info_helper.rb
+   A /trunk/vendor/rails/railties/builtin/rails_info/rails_info_controller.rb
+   A /trunk/vendor/rails/railties/configs
+   A /trunk/vendor/rails/railties/configs/apache.conf
+   A /trunk/vendor/rails/railties/configs/databases
+   A /trunk/vendor/rails/railties/configs/databases/frontbase.yml
+   A /trunk/vendor/rails/railties/configs/databases/mysql.yml
+   A /trunk/vendor/rails/railties/configs/databases/oracle.yml
+   A /trunk/vendor/rails/railties/configs/databases/postgresql.yml
+   A /trunk/vendor/rails/railties/configs/databases/sqlite2.yml
+   A /trunk/vendor/rails/railties/configs/databases/sqlite3.yml
+   A /trunk/vendor/rails/railties/configs/lighttpd.conf
+   A /trunk/vendor/rails/railties/configs/routes.rb
+   A /trunk/vendor/rails/railties/dispatches
+   A /trunk/vendor/rails/railties/dispatches/dispatch.fcgi
+   A /trunk/vendor/rails/railties/dispatches/dispatch.rb
+   A /trunk/vendor/rails/railties/dispatches/gateway.cgi
+   A /trunk/vendor/rails/railties/doc
+   A /trunk/vendor/rails/railties/doc/README_FOR_APP
+   A /trunk/vendor/rails/railties/environments
+   A /trunk/vendor/rails/railties/environments/boot.rb
+   A /trunk/vendor/rails/railties/environments/development.rb
+   A /trunk/vendor/rails/railties/environments/environment.rb
+   A /trunk/vendor/rails/railties/environments/production.rb
+   A /trunk/vendor/rails/railties/environments/test.rb
+   A /trunk/vendor/rails/railties/fresh_rakefile
+   A /trunk/vendor/rails/railties/helpers
+   A /trunk/vendor/rails/railties/helpers/application.rb
+   A /trunk/vendor/rails/railties/helpers/application_helper.rb
+   A /trunk/vendor/rails/railties/helpers/test_helper.rb
+   A /trunk/vendor/rails/railties/html
+   A /trunk/vendor/rails/railties/html/404.html
+   A /trunk/vendor/rails/railties/html/500.html
+   A /trunk/vendor/rails/railties/html/favicon.ico
+   A /trunk/vendor/rails/railties/html/images
+   A /trunk/vendor/rails/railties/html/images/rails.png
+   A /trunk/vendor/rails/railties/html/index.html
+   A /trunk/vendor/rails/railties/html/javascripts
+   A /trunk/vendor/rails/railties/html/javascripts/application.js
+   A /trunk/vendor/rails/railties/html/javascripts/controls.js
+   A /trunk/vendor/rails/railties/html/javascripts/dragdrop.js
+   A /trunk/vendor/rails/railties/html/javascripts/effects.js
+   A /trunk/vendor/rails/railties/html/javascripts/prototype.js
+   A /trunk/vendor/rails/railties/html/robots.txt
+   A /trunk/vendor/rails/railties/lib
+   A /trunk/vendor/rails/railties/lib/binding_of_caller.rb
+   A /trunk/vendor/rails/railties/lib/breakpoint.rb
+   A /trunk/vendor/rails/railties/lib/breakpoint_client.rb
+   A /trunk/vendor/rails/railties/lib/code_statistics.rb
+   A /trunk/vendor/rails/railties/lib/commands
+   A /trunk/vendor/rails/railties/lib/commands/about.rb
+   A /trunk/vendor/rails/railties/lib/commands/breakpointer.rb
+   A /trunk/vendor/rails/railties/lib/commands/console.rb
+   A /trunk/vendor/rails/railties/lib/commands/destroy.rb
+   A /trunk/vendor/rails/railties/lib/commands/generate.rb
+   A /trunk/vendor/rails/railties/lib/commands/ncgi
+   A /trunk/vendor/rails/railties/lib/commands/ncgi/listener
+   A /trunk/vendor/rails/railties/lib/commands/ncgi/tracker
+   A /trunk/vendor/rails/railties/lib/commands/performance
+   A /trunk/vendor/rails/railties/lib/commands/performance/benchmarker.rb
+   A /trunk/vendor/rails/railties/lib/commands/performance/profiler.rb
+   A /trunk/vendor/rails/railties/lib/commands/plugin.rb
+   A /trunk/vendor/rails/railties/lib/commands/process
+   A /trunk/vendor/rails/railties/lib/commands/process/inspector.rb
+   A /trunk/vendor/rails/railties/lib/commands/process/reaper.rb
+   A /trunk/vendor/rails/railties/lib/commands/process/spawner.rb
+   A /trunk/vendor/rails/railties/lib/commands/process/spinner.rb
+   A /trunk/vendor/rails/railties/lib/commands/runner.rb
+   A /trunk/vendor/rails/railties/lib/commands/server.rb
+   A /trunk/vendor/rails/railties/lib/commands/servers
+   A /trunk/vendor/rails/railties/lib/commands/servers/base.rb
+   A /trunk/vendor/rails/railties/lib/commands/servers/lighttpd.rb
+   A /trunk/vendor/rails/railties/lib/commands/servers/mongrel.rb
+   A /trunk/vendor/rails/railties/lib/commands/servers/webrick.rb
+   A /trunk/vendor/rails/railties/lib/commands/update.rb
+   A /trunk/vendor/rails/railties/lib/commands.rb
+   A /trunk/vendor/rails/railties/lib/console_app.rb
+   A /trunk/vendor/rails/railties/lib/console_sandbox.rb
+   A /trunk/vendor/rails/railties/lib/console_with_helpers.rb
+   A /trunk/vendor/rails/railties/lib/dispatcher.rb
+   A /trunk/vendor/rails/railties/lib/fcgi_handler.rb
+   A /trunk/vendor/rails/railties/lib/initializer.rb
+   A /trunk/vendor/rails/railties/lib/rails
+   A /trunk/vendor/rails/railties/lib/rails/version.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator
+   A /trunk/vendor/rails/railties/lib/rails_generator/base.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/commands.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generated_attribute.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/applications
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/applications/app
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/applications/app/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/applications/app/app_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/controller
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/controller/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/controller/controller_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/controller.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/functional_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/helper.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/view.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/integration_test
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/integration_test/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/integration_test/integration_test_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/integration_test/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/integration_test/templates/integration_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/mailer
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/mailer/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/mailer/mailer_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/fixture.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/mailer.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/unit_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/mailer/templates/view.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/migration
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/migration/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/migration/migration_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/migration/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/migration/templates/migration.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/model
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/model/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/model/model_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/model/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/model/templates/fixtures.yml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/model/templates/migration.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/model/templates/model.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/model/templates/unit_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/observer
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/observer/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/observer/observer_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/observer/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/observer/templates/observer.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/observer/templates/unit_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/plugin_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/README
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/Rakefile
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/init.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/install.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/plugin.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/tasks.rake
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/uninstall.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/plugin/templates/unit_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/resource_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/templates/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/templates/controller.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/templates/fixtures.yml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/templates/functional_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/templates/helper.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/templates/migration.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/templates/model.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/resource/templates/unit_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/controller.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/form.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/form_scaffolding.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/functional_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/helper.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/layout.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/style.css
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_edit.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_list.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_new.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold/templates/view_show.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/scaffold_resource_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/controller.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/fixtures.yml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/functional_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/helper.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/layout.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/migration.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/model.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/style.css
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/unit_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/view_edit.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/view_index.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/view_new.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/scaffold_resource/templates/view_show.rhtml
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/session_migration
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/session_migration/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/session_migration/session_migration_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/session_migration/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/session_migration/templates/migration.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/web_service
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/web_service/USAGE
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates/api_definition.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates/controller.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/web_service/templates/functional_test.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/generators/components/web_service/web_service_generator.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/lookup.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/manifest.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/options.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/scripts
+   A /trunk/vendor/rails/railties/lib/rails_generator/scripts/destroy.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/scripts/generate.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/scripts/update.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/scripts.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/simple_logger.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator/spec.rb
+   A /trunk/vendor/rails/railties/lib/rails_generator.rb
+   A /trunk/vendor/rails/railties/lib/railties_path.rb
+   A /trunk/vendor/rails/railties/lib/ruby_version_check.rb
+   A /trunk/vendor/rails/railties/lib/rubyprof_ext.rb
+   A /trunk/vendor/rails/railties/lib/tasks
+   A /trunk/vendor/rails/railties/lib/tasks/databases.rake
+   A /trunk/vendor/rails/railties/lib/tasks/documentation.rake
+   A /trunk/vendor/rails/railties/lib/tasks/framework.rake
+   A /trunk/vendor/rails/railties/lib/tasks/log.rake
+   A /trunk/vendor/rails/railties/lib/tasks/misc.rake
+   A /trunk/vendor/rails/railties/lib/tasks/pre_namespace_aliases.rake
+   A /trunk/vendor/rails/railties/lib/tasks/rails.rb
+   A /trunk/vendor/rails/railties/lib/tasks/statistics.rake
+   A /trunk/vendor/rails/railties/lib/tasks/testing.rake
+   A /trunk/vendor/rails/railties/lib/tasks/tmp.rake
+   A /trunk/vendor/rails/railties/lib/test_help.rb
+   A /trunk/vendor/rails/railties/lib/webrick_server.rb
+
+Initial upload.
+
+------------------------------------------------------------------------
