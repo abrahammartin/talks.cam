@@ -198,6 +198,17 @@ html, body {
 		text-align: right;
 		}
 	
+	#header td.cookiewarn {
+                font-size: 11px;
+                color:red;
+		width: 280px;
+		text-align: right;
+		}
+
+        #header td.cookiewarn a {
+                color:red;
+                }
+	
 	#header td.flash {
 		vertical-align: middle;
 		text-align: center;
