@@ -16,6 +16,7 @@ xml.list do
       xml.title talk.title
       xml.abstract talk.abstract
       xml.speaker talk.name_of_speaker
+      xml.speaker_url talk.speaker_url
       xml.venue talk.venue.name
       xml.special_message talk.special_message
       xml.url talk_url(:id => talk.id )
