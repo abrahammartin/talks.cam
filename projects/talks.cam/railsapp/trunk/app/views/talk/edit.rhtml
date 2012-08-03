@@ -18,6 +18,9 @@
 	<h3>Speaker's name and affiliation</h3>
 	<%= f.text_field :name_of_speaker, :size => '60', :class => 'wide'  %>
 	
+	<h3>Speaker's website address (OPTIONAL - NEW and EXPERIMENTAL)</h3>
+	<%= f.text_field :speaker_url, :size => '60', :class => 'wide'  %>
+	
 	<h3>Picture of speaker or other image associated with this talk (optional)</h3>
 	<%= f.file_field :image %>
 	
