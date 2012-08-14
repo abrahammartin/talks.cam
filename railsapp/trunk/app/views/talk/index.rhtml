@@ -11,7 +11,7 @@
 	</p>
 		
 	<ul class='details'>
-		<li><%= image_tag 'user.jpg' %><%= link_to_if @talk.speaker, @talk.name_of_speaker, { :controller => "user", :action => "show", :id => @talk.speaker  } %><% if @talk.speaker_url %>
+		<li><%= image_tag 'user.jpg' %><%= link_to_if @talk.speaker, @talk.name_of_speaker, { :controller => "user", :action => "show", :id => @talk.speaker  } %><% unless @talk.speaker_url.blank? %>
                    <%= link_to image_tag('world_link.png'), @talk.speaker_url, :target => "_blank" %>
                 <% end %></li>
 		<li><%= image_tag 'clock.jpg' %><%= format_time_of_talk @talk %></li>
