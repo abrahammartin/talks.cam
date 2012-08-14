@@ -1,14 +1,15 @@
 <div class='help'>
 
-<p>Please write the name and affiliation of the speaker as you would like it to appear.	If you do not know it at this stage, please leave it as "<%= update_field 'talk_name_of_speaker','Speaker to be confirmed' %>". As you start typing I will make some suggestions below. Click on a suggestion to enter their details.</p>
+<p>You can optionally provide the website address for the speaker's home page. <i><b>NB:</b> This is a new and experimental feature.</i> <!-- As you start typing I will make some suggestions below. Click on a suggestion to enter their details.--></p>
 
-<%= observe_field 'talk_name_of_speaker',  :frequency => 1, :update => 'speakers', :url => { :action=> 'speaker_name_list' }, :with => "'search=' + escape(value)" %>
+<!-- TODO this can't work until speaker_url_list is implemented in controllers/talk_controller.rb --> 
+<%#= observe_field 'talk_speaker_url',  :frequency => 1, :update => 'speaker_urls', :url => { :action=> 'speaker_url_list' }, :with => "'search=' + escape(value)" %>
 
 <ul>
-<div id='speakers'>
+<div id='speaker_urls'>
 </div>
 </ul>
 
 </div>
 
-<div style='height:16em;'>&nbsp;</div>
+<div style='height:22em;'>&nbsp;</div>
