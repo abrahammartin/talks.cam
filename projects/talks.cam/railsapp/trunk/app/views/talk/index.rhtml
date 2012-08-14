@@ -11,7 +11,9 @@
 	</p>
 		
 	<ul class='details'>
-		<li><%= image_tag 'user.jpg' %><%= link_to_if @talk.speaker, @talk.name_of_speaker, { :controller => "user", :action => "show", :id => @talk.speaker  } %><!-- TODO add link using world_link.png with title/alt text 'Go to speaker’s external webpage' if speaker_url field exists --></li>
+		<li><%= image_tag 'user.jpg' %><%= link_to_if @talk.speaker, @talk.name_of_speaker, { :controller => "user", :action => "show", :id => @talk.speaker  } %><% if @talk.speaker_url %>
+                   <%= link_to image_tag('world_link.png'), @talk.speaker_url, :target => "_blank" %>
+                <% end %></li>
 		<li><%= image_tag 'clock.jpg' %><%= format_time_of_talk @talk %></li>
 		<li><%= image_tag 'house.jpg' %><%= link_list @talk.venue %>.</li>
 	</ul>
