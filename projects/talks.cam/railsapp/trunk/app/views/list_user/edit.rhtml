@@ -4,15 +4,16 @@
 	<% for list_user in @list_users %>
 		<% manager = list_user.user %>
 		<li id='manager-<%= manager.id %>'>
-			<%= manager.email %> [<%= manager.name %>]
+			<b><%= manager.email %></b> [<%= manager.name %>]
 			<% unless manager == User.current %>
 				<%= link_to '(remove)', list_user_url(:action => 'destroy', :id => list_user.id ) %>
 			<% end %>
 		</li>
 	<% end %>
+        <li><i>To add a new manager, simply enter their </i><b>e-mail address only:</b></li>
 	<li id='add-manager'>
 		<% form_for(:list_user, :url => list_user_url(:action => 'create')) do |f| %>
-			<%= f.hidden_field :list_id %><%= f.text_field :user_email %><%= submit_tag 'Add new manager' %>
+			<%= f.hidden_field :list_id %><%= f.text_field :user_email %><%= submit_tag 'Add new manager' %> (<%= link_to 'Help', document_url('Adding another list organiser') %>)
 		<% end %>
 	</li>
 </ul>
