@@ -39,11 +39,12 @@
 	<h3>Time HH:MM</h3>
 	<%= f.text_field :start_time_string, :size => '5' %> to <%= f.text_field :end_time_string, :size => '5' %> 
 	
-	<h3>Publicity</h3>
+	<h3>Ex-directory or Publicity?</h3>
 	<p class='emailcheck'><%= f.check_box :ex_directory %> If checked,
 this talk will not appear in the index or search results, but will still be
 found by Google and similar sites.
 (<%= link_to 'Tell me more', document_url(:name => 'Privacy and Publicity') %>)</p>
+        <p style="font-size: 0.8em;"><b>Hint</b>: if you want your talk to appear in Talks.cam's index and search results, you will need to UNTICK the box immediately above.</p>
 
 	<p><%= submit_tag 'Save'%> or <%= link_to 'Cancel', @talk.id ? talk_url(:id => @talk.id) : list_url(:id => @talk.series.id ) %></p>
 	
