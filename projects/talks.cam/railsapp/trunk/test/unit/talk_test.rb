@@ -330,6 +330,15 @@ class TalkTest < Test::Unit::TestCase
   
   # Assumes we are in a British Time Zone
   # Checks handles summer time conversion correctly
+  # NOTE (added 2012-08): not entirely sure what this test does:
+  # 1) I think it depends on the SERVER timezone (or at least Ruby?) being set
+  # to London (GMT/BST) - whereas we now run our servers on UTC all year round
+  # 2) I don't know whether it's meant to behave differently depending on
+  # whether you're actually in GMT or BST? (i.e. what time of year you run it!?!)
+  # 3) set_time_slot isn't actually the main method used to set times of talks?
+  # 4) we have recently added time zone related stuff to the ical output which
+  # presumes that the database stores times in GMT/BST I think?
+  # So we probably expect this test to FAIL now?
   def test_set_time_slot
     talk = Talk.new
     talk.set_time_slot '2006/11/1', '20:00','21:00'
