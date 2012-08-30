@@ -19,7 +19,9 @@ xml.list do
       xml.speaker_url talk.speaker_url
       xml.venue talk.venue.name
       xml.special_message talk.special_message
-      xml.organiser talk.organiser.name
+      if talk.organiser
+        xml.organiser talk.organiser.name
+      end
       xml.url talk_url(:id => talk.id )
       
       xml.start_time talk.start_time.to_formatted_s(:rfc822)
