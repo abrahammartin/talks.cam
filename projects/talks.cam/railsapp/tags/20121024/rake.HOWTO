@@ -1,0 +1,32 @@
+=== Rake version ===
+
+$ rake --version
+rake, version 0.9.2.2
+
+$ gem list --local | grep rake
+rake (0.9.2.2, 0.7.3)
+
+
+=== Running tests ===
+
+http://guides.rubyonrails.org/testing.html
+
+rake db:test:prepare
+
+rake test
+
+# Or separately:
+rake test:units
+rake test:functionals
+rake test:integration
+
+
+=== Database schema changes ===
+
+http://guides.rubyonrails.org/migrations.html
+
+rake db:migrate
+
+# Apply it to the production database
+rake db:migrate RAILS_ENV=production
+
