@@ -1,4 +1,7 @@
 class UserController < ApplicationController
+
+  filter_parameter_logging :password
+
   before_filter :ensure_user_is_logged_in, :except => %w( new show create password_sent )
   before_filter :find_user, :except => %w( new create password_sent )
   before_filter :check_can_edit_user, :except => %w( new show create password_sent show index )

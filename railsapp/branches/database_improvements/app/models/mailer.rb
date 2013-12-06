@@ -1,8 +1,11 @@
 class Mailer < ActionMailer::Base
   
   include ActionController::UrlWriter
-  default_url_options[:host] = HOST = 'talks.cam.ac.uk'
+  HOSTROOTURL = ActionController::Base.asset_host
   
+  # HOST is used by legacy code and must not contain the protocol prefix
+  default_url_options[:host] = HOST = HOSTROOTURL.sub(/^[a-z]+:\/\//,'')
+
   # FIXME: Refactor into class variables and set in environment.rb
   FROM = 'noreply@talks.cam.ac.uk'
 
@@ -38,9 +41,10 @@ class Mailer < ActionMailer::Base
   
   # The mails
   
-  def password(user, url = "http://talks.cam.ac.uk/login/other_users")
+  def password(user, password, url = "http://talks.cam.ac.uk/login/other_users")
+# XXX do we need filter_param_logging or does it only apply to controllers?
     @subject    = 'Your talks.cam password'
-    @body       = { :user => user, :url => login_url(:action => 'other_users') }
+    @body       = { :user => user, :url => login_url(:action => 'other_users'), :password => password, :hostrooturl => HOSTROOTURL }
     @recipients = user.email
     @from       = FROM
     @sent_on    = Time.now
@@ -48,8 +52,15 @@ class Mailer < ActionMailer::Base
   end
   
   def speaker_invite(user, talk)
+### XXX  aargh @user.crsid gets corrupted by speaker invitage !!?? though any self-edit would, actually??? seems if last_login != null it doesn't get corrupted?? ###
+    if talk.organiser.name && talk.organiser.name.length > 0 # XXX empty?
+      organisername = talk.organiser.name
+    else
+      organisername = talk.organiser.email
+    end
+    passwordreseturl = "#{HOSTROOTURL}/login/send_password?email=#{user.email}"
     @subject    = 'Giving a talk in Cambridge'
-    @body       = { :user => user, :url => talk_url(:id => talk.id, :action => 'edit'), :talk => talk }
+    @body       = { :user => user, :url => talk_url(:id => talk.id, :action => 'edit'), :talk => talk, :hostrooturl => HOSTROOTURL, :passwordreseturl => passwordreseturl, :organisername => organisername }
     @recipients = user.email
     @cc         = talk.organiser.email if talk.organiser && talk.organiser.email
     @from       = FROM

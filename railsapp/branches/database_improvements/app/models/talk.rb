@@ -70,7 +70,8 @@ class Talk < ActiveRecord::Base
   before_save :ensure_speaker_initialized
   after_validation :update_start_and_end_times_from_strings
   after_save  :add_to_lists
-  after_save  :possibly_send_the_speaker_an_email
+  after_save  :possibly_send_the_speaker_emails
+
 
   def sort_of_delete
     self.ex_directory = true
@@ -229,11 +230,18 @@ class Talk < ActiveRecord::Base
   
   attr_accessor :send_speaker_email
   
-  def possibly_send_the_speaker_an_email
-    return unless send_speaker_email == '1'
+  def possibly_send_the_speaker_emails
+    return true unless send_speaker_email == '1'
+
     return true unless speaker_email && speaker_email =~ /.*?@.*?\..*/
     Mailer.deliver_speaker_invite( speaker, self )
-    speaker.send_password
+
+    # BE CAREFUL BEFORE sending speaker password:
+    # 1) This triggers a password RESET - so don't do it to "active" users
+    return true unless speaker.last_login.nil? 
+    # 2) This password is intended for "Other users" i.e. non-Raven - so don't encourage Raven users to use it
+    return true unless speaker.crsid.nil?
+    speaker.reset_and_send_password
   end
   
   # FIXME: Refactor with the code in the show controller

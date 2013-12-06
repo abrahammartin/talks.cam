@@ -39,7 +39,7 @@ class LoginController < ApplicationController
   def not_raven_login
     user = User.find_by_email params[:email]
     if user
-      if user.password && params[:password] == user.password
+      if user.is_password?(params[:password])
         session[:user_id ] = user.id
         post_login_actions
     	else
@@ -117,7 +117,7 @@ class LoginController < ApplicationController
   def send_password
     @user = User.find_by_email params[:email]
     if @user
-      @user.send_password
+      @user.reset_and_send_password
       render :action => 'password_sent'
     else
       flash[:error] = "I'm sorry, but #{params[:email]} is not listed on this system. (note that is is case sensitive)"
