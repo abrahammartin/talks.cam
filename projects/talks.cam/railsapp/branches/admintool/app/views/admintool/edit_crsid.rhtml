@@ -1,0 +1,47 @@
+<% if User.current.administrator? %>
+
+<h1>EDIT RAVEN ATTRIBUTE (SUPER ADMIN TOOL)</h1>
+
+<p style="font-size: small;">&lt;&lt; Back to <a href="../search">Find ANY User (SUPER ADMIN TOOL)</a></p>
+
+<h2><%= @user.email %></h2>
+
+<ul>
+<li>id = <%= @user.id %></li>
+<li>email = <%= @user.email %></li>
+<li>name = <%= @user.name %></li>
+<li>affiliation = <%= @user.affiliation %></li>
+<li>last_login = <%= @user.last_login %></li>
+<li>ex_directory = <%= @user.ex_directory %></li>
+<li>crsid = <%= @user.crsid %> <i>(see below)</i></li>
+</ul>
+
+<% if @user.crsid.nil? %>
+<p><b>Raven IS NOT currently enabled for this user (CRSID is NULL)</b></p>
+<form method="POST" action="../set_crsid/<%= @user.id %>" size="8">
+  To enable Raven, enter CRSID:
+  <input type="text" name="crsid" value="crsid"/>
+  <input type="submit" value="Set"/>
+</form>
+
+<% else %>
+<p><b>Raven IS currently enabled for this user</b></p>
+<form method="POST" action="../set_crsid/<%= @user.id %>">
+  <b>CRSID = </b>
+  <input type="text" name="crsid" value="<%= @user.crsid %>" size="8"/>
+  <input type="submit" value="Modify"/>
+</form>
+<form method="POST" action="../delete_crsid/<%= @user.id %>">
+  <b>OR Disable Raven: 
+  <input type="submit" value="Remove CRSID"/>
+</form>
+
+<p>Please be careful - the system will not stop you from setting the same CRSID for multiple users!</p>
+<p>NOTE - if the email address ends in @cam.ac.uk, the system will automatically override when you save and change the CRSID to the bit before @cam.ac.uk.</p>
+<% end %>
+
+<% else
+
+     raise "Administrators Only!!"
+
+   end %>
