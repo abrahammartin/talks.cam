@@ -1,6 +1,6 @@
 Dear <%= @user.name %> 
 
-<%= @talk.organiser.name %> is organising a talk and has put you down as the speaker.
+<%= @organisername %> is organising a talk using the <%= @hostrooturl %> website and has put you down as the speaker.
 
 The details so far are:
 Series: <%= @talk.series.name %>
@@ -9,14 +9,43 @@ Date: <%=  @talk.start_time.strftime('%A %d %B %Y, %H:%M - ')+@talk.end_time.str
 Venue: <%= @talk.venue && @talk.venue.name %>
 Abstract: <%= @talk.abstract %>
 
-Because you are the speaker, you can edit the details of this talk by going to:
+Because you are the speaker, you can edit the details of this talk online.
+
+<%= @organisername %> has put your e-mail address down as <%= @user.email %>: This e-mail address will be used BOTH to determine which account has been given permission to edit this talk, AND will also be provided to logged-in users of the website who wish to contact you about the talk.
+
+If you wish to use a different e-mail address, please contact <%= @organisername %> at <%= @talk.organiser.email %> and ask them to change it.
+
+If you are happy with this e-mail address, you can edit the details of this talk by going to:
 
 <%= @url %>
 
-To log in you will need to enter your e-mail address and a password, both of which have been sent to you in a separate e-mail. If this other e-mail doesn't arrive, please go to:
+You will need to be logged-in in order to access that page:
+<%- unless @user.crsid.nil? -%>
+<%# ######## RAVEN USERS ######## %>
+We would recommend that you use Raven to log in, as the account registered to <%= @user.email %> is currently 
+linked to the Raven User-id: <%= @user.crsid %> (this may or may not be a currently valid Raven User-id). If you do not know your Raven password, please go to http://www.ucs.cam.ac.uk/docs/faq/raven/n5
 
-http://talks.cam.ac.uk/login/send_password?email=<%= @user.email %>
+If you do not have a Raven account, you can login using your e-mail address instead, please go here first to request a password:
 
-If you have any problems, please contact <%= @talk.organiser.name %> at <%= @talk.organiser.email %> in the first instance.  
+<%= @passwordreseturl %>
+
+<%- end -%>
+<%- if @user.crsid.nil? -%>
+<%-  if @user.last_login.nil? -%>
+<%#  ### NON-RAVEN USERS WHO HAVE NEVER LOGGED-IN ### %>
+To log in you will need to enter your e-mail address and password, both of which have been sent to you in a separate e-mail. If this other e-mail doesn't arrive, please go here to request a new one:
+
+<%= @passwordreseturl %>
+
+<%-  else -%>
+<%#  ### NON-RAVEN USERS WHO HAVE LOGGED-IN BEFORE ### %>
+Please login using your existing account associated with this e-mail address: <%= @user.email %> . If you cannot remember your password, please go here to request a new one:
+
+<%= @passwordreseturl %>
+
+<%-  end
+   end -%>
+If you have any problems, please contact <%= @organisername %> at <%= @talk.organiser.email %> in the first instance.  
 
 webmaster@talks.cam.ac.uk
+
