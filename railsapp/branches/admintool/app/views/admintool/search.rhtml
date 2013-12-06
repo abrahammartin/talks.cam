@@ -1,0 +1,52 @@
+<% if User.current.administrator? %>
+
+<h1>Find ANY User (SUPER ADMIN TOOL)</h1>
+
+<% unless @disable_search_box %>
+<form method="POST" action="search">
+
+<input type="text" name="search" value="<%=@search%>"/>
+<input type="submit" value="Find Users"/> OR
+<a href="find_admins">Show all super admin users</a>
+
+</form>
+<% end %>
+
+<% if @heading2text %>
+  <h2><%= @heading2text %></h2>
+<% end %>
+
+<% unless @users.empty? %>
+
+<p>Found <%= pluralize(@users.length, 'result') %>.</p>
+
+<table style="border-collapse: collapse">
+<tr>
+<th>E-mail</th>
+<th>Raven</th>
+<th style="width: 350px;">Name</th>
+<th>Last Login</th>
+<th style="font-size: x-small;">Ex-Directory</th>
+</tr>
+<% @users.each do |u| %>
+<tr>
+<td style="border: solid 1px gray; padding: 4px;"><%= u.email %></td>
+<td style="border: solid 1px gray; padding: 4px; text-align: center;"><a href="edit_crsid/<%=u.id%>"
+    ><%= (u.crsid && !u.crsid.empty?) ? "<b>#{u.crsid}</b>" : "<i>enable</i>" %></a></td>
+<td style="border: solid 1px gray; padding: 4px;"><%= link_user(u) %></td>
+<td style="border: solid 1px gray; padding: 4px;"><%= u.last_login %></td>
+<td style="border: solid 1px gray; padding: 4px;"><%= u.ex_directory ? "ex-dir" : "" %></td>
+</tr>
+<% end %>
+</table>
+<% end %>
+
+<% if @search && !@search.empty? && @users.empty? %>
+  <p>No results found.</p>
+<% end %>
+
+<% else
+
+     raise "Administrators Only!!"
+
+   end %>
