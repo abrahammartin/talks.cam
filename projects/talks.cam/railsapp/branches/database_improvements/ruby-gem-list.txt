@@ -1,0 +1,12 @@
+$ gem list --local 
+
+*** LOCAL GEMS ***
+
+fcgi (0.8.7)
+ferret (0.11.6)
+icalendar (1.0.2)
+mysql (2.7)
+rake (0.9.2.2, 0.7.3)
+RedCloth (3.0.4)
+rmagick (2.13.1)
+stemmer (1.0.1)
