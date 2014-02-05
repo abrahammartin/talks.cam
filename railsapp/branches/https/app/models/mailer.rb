@@ -38,7 +38,7 @@ class Mailer < ActionMailer::Base
   
   # The mails
   
-  def password(user, url = "http://talks.cam.ac.uk/login/other_users")
+  def password(user)
     @subject    = 'Your talks.cam password'
     @body       = { :user => user, :url => login_url(:action => 'other_users') }
     @recipients = user.email
